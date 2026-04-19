@@ -224,10 +224,30 @@ body {
   pointer-events: none;
 }
 
+.tx-hero-layout {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  position: relative;
+  z-index: 1;
+}
+
 .tx-hero-inner {
   position: relative;
   z-index: 1;
-  max-width: 680px;
+  max-width: 580px;
+  flex: 1;
+}
+
+.tx-hero-illust {
+  flex-shrink: 0;
+  width: 320px;
+}
+
+.tx-hero-illust img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 8px 32px rgba(0,0,0,0.3));
 }
 
 .tx-hero-badge {
@@ -1030,6 +1050,32 @@ body {
   color: #666;
 }
 
+/* ===================================================
+   SECTION ILLUSTRATION
+=================================================== */
+.tx-section-illust {
+  text-align: center;
+  margin-top: 48px;
+}
+
+.tx-section-illust img {
+  max-width: 220px;
+  height: auto;
+  margin: 0 auto;
+  opacity: 0.85;
+}
+
+.tx-cta-illust {
+  margin-bottom: 32px;
+}
+
+.tx-cta-illust img {
+  max-width: 180px;
+  height: auto;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 991px) {
   .tx-hero-title { font-size: 32px; }
@@ -1041,6 +1087,11 @@ body {
   .tx-pricing-grid { grid-template-columns: 1fr; }
   .tx-expenses-grid { grid-template-columns: 1fr; }
   .tx-profile-card { padding: 32px 24px; }
+  .tx-hero-layout { flex-direction: column; text-align: center; }
+  .tx-hero-illust { width: 240px; order: -1; }
+  .tx-hero-inner { max-width: 100%; }
+  .tx-hero .tx-btn-group { justify-content: center; }
+  .tx-hero-metrics { justify-content: center; }
 }
 
 @media (max-width: 767px) {
@@ -1053,6 +1104,8 @@ body {
   .tx-onboard-dot { width: 48px; height: 48px; font-size: 16px; }
   .tx-onboard-timeline::before { left: 24px; }
   .tx-cta-title { font-size: 24px; }
+  .tx-hero-illust { width: 200px; }
+  .tx-section-illust img { max-width: 160px; }
 }
 </style>
 </head>
@@ -1061,6 +1114,7 @@ body {
 <!-- ===== HERO ===== -->
 <section class="tx-hero">
   <div class="tx-container">
+    <div class="tx-hero-layout">
     <div class="tx-hero-inner tx-fade">
       <div class="tx-hero-badge"><i class="fas fa-star"></i> freee 5つ星認定アドバイザー</div>
       <h1 class="tx-hero-title">
@@ -1098,6 +1152,10 @@ body {
           <div class="tx-hero-metric-label">東京・京都</div>
         </div>
       </div>
+    </div>
+    <div class="tx-hero-illust tx-fade tx-delay-2">
+      <img src="images/hero-accounting.png" alt="経理イメージ"/>
+    </div>
     </div>
   </div>
 </section>
@@ -1148,6 +1206,9 @@ body {
         <div class="tx-problem-icon"><i class="fas fa-user-tie"></i></div>
         <p class="tx-problem-text"><strong>役員報酬や経費の処理</strong>に自信がない。税務調査で否認されないか不安がある。</p>
       </div>
+    </div>
+    <div class="tx-section-illust tx-fade">
+      <img src="images/idea.png" alt="ひらめき"/>
     </div>
   </div>
 </section>
@@ -1241,6 +1302,9 @@ body {
         </div>
       </div>
     </div>
+    <div class="tx-section-illust tx-fade">
+      <img src="images/meeting.png" alt="会議"/>
+    </div>
   </div>
 </section>
 
@@ -1317,6 +1381,9 @@ body {
           <span class="tx-service-tag">業務DX</span>
         </div>
       </div>
+    </div>
+    <div class="tx-section-illust tx-fade">
+      <img src="images/pc-work.png" alt="パソコン作業"/>
     </div>
   </div>
 </section>
@@ -1607,6 +1674,9 @@ body {
 <!-- ===== CTA ===== -->
 <section id="contact" class="tx-cta">
   <div class="tx-container tx-fade">
+    <div class="tx-cta-illust">
+      <img src="images/consultation.png" alt="相談"/>
+    </div>
     <h2 class="tx-cta-title">まずは無料でご相談ください</h2>
     <p class="tx-cta-sub">税務・会計のお悩みから資金調達まで、創業期の経営者をトータルでサポートします。お気軽にお問い合わせください。</p>
     <div class="tx-btn-group" style="justify-content: center; position: relative; z-index: 1;">
@@ -1623,6 +1693,9 @@ body {
     <div class="tx-center tx-fade">
       <div class="tx-eyebrow">Office</div>
       <h2 class="tx-section-title">事務所概要</h2>
+      <div class="tx-section-illust" style="margin-top: 24px; margin-bottom: 32px;">
+        <img src="images/handshake.png" alt="パートナーシップ"/>
+      </div>
     </div>
     <div class="tx-profile-card tx-fade tx-delay-1">
       <h3>田村直大税理士事務所（はてなベース税理士事務所）</h3>
