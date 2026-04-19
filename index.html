@@ -19,20 +19,20 @@ ul { list-style: none; }
 
 /* ===== CSS Variables ===== */
 :root {
-  --navy: #2A5772;
-  --navy-dark: #1e3f54;
-  --navy-light: #3a6d8a;
-  --accent: #4A90D9;
-  --accent-light: #e8f1fb;
-  --gold: #f0b90b;
-  --gold-dark: #d4a30a;
+  --navy: #0A2846;
+  --navy-dark: #061a30;
+  --navy-light: #1a3d5c;
+  --accent: #0A2846;
+  --accent-light: #e8edf3;
+  --gold: #0A2846;
+  --gold-dark: #061a30;
   --green: #2ecc71;
-  --body-text: #545454;
-  --divider: #E4EAEB;
-  --bg-gray: #F7F8FA;
+  --body-text: #191919;
+  --divider: #E4E4E4;
+  --bg-gray: #F8F8F8;
   --bg-white: #ffffff;
   --font-base: "Zen Kaku Gothic New", sans-serif;
-  --font-heading: "Jost", "Zen Kaku Gothic New", sans-serif;
+  --font-heading: "Zen Kaku Gothic New", sans-serif;
   --shadow-sm: 0 1px 4px rgba(42,87,114,0.06);
   --shadow-md: 0 4px 20px rgba(42,87,114,0.10);
   --shadow-lg: 0 12px 40px rgba(42,87,114,0.14);
@@ -61,7 +61,7 @@ body {
 }
 
 .tx-section {
-  padding: 88px 0;
+  padding: 100px 0;
 }
 
 /* ===== Section Elements ===== */
@@ -98,7 +98,7 @@ body {
 
 .tx-section-sub {
   font-size: 15px;
-  color: #888;
+  color: #555;
   margin-bottom: 56px;
   max-width: 600px;
   line-height: 1.8;
@@ -151,17 +151,17 @@ body {
 }
 
 .tx-btn-gold {
-  background: var(--gold);
-  color: var(--navy-dark);
-  border-color: var(--gold);
-  box-shadow: 0 4px 16px rgba(240,185,11,0.35);
+  background: #ffffff;
+  color: var(--navy);
+  border-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(10,40,70,0.15);
 }
 
 .tx-btn-gold:hover {
-  background: var(--gold-dark);
-  border-color: var(--gold-dark);
+  background: #f0f0f0;
+  border-color: #f0f0f0;
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(240,185,11,0.45);
+  box-shadow: 0 8px 24px rgba(10,40,70,0.25);
 }
 
 .tx-btn-group {
@@ -194,8 +194,8 @@ body {
    1. HERO — Full-bleed gradient
 =================================================== */
 .tx-hero {
-  background: linear-gradient(155deg, #0f2b3d 0%, var(--navy-dark) 30%, var(--navy) 60%, var(--navy-light) 100%);
-  padding: 120px 0 96px;
+  background: linear-gradient(155deg, #030f1a 0%, var(--navy-dark) 30%, var(--navy) 60%, var(--navy-light) 100%);
+  padding: 140px 0 110px;
   position: relative;
   overflow: hidden;
 }
@@ -240,7 +240,7 @@ body {
   padding: 6px 16px;
   font-size: 12px;
   font-weight: 600;
-  color: var(--gold);
+  color: #fff;
   margin-bottom: 28px;
   backdrop-filter: blur(8px);
 }
@@ -261,7 +261,7 @@ body {
 
 .tx-hero-title em {
   font-style: normal;
-  color: var(--gold);
+  color: #fff;
 }
 
 .tx-hero-sub {
@@ -457,7 +457,7 @@ body {
 .tx-strength-desc {
   font-size: 14px;
   line-height: 1.85;
-  color: #777;
+  color: #555;
 }
 
 /* ===================================================
@@ -537,7 +537,7 @@ body {
 .tx-onboard-desc {
   font-size: 14px;
   line-height: 1.8;
-  color: #777;
+  color: #555;
 }
 
 .tx-onboard-tags {
@@ -608,7 +608,7 @@ body {
 .tx-service-desc {
   font-size: 14px;
   line-height: 1.85;
-  color: #777;
+  color: #555;
   margin-bottom: 16px;
 }
 
@@ -680,7 +680,7 @@ body {
 
 .tx-flow-box p {
   font-size: 13px;
-  color: #888;
+  color: #666;
   line-height: 1.7;
 }
 
@@ -742,7 +742,7 @@ body {
 
 .tx-comm-desc {
   font-size: 13px;
-  color: #888;
+  color: #666;
   line-height: 1.75;
 }
 
@@ -778,14 +778,14 @@ body {
 .tx-expense-desc {
   font-size: 13px;
   line-height: 1.8;
-  color: #777;
+  color: #555;
 }
 
 /* ===================================================
    10. PRICING
 =================================================== */
 .tx-pricing {
-  background: linear-gradient(160deg, #0f2b3d 0%, var(--navy-dark) 40%, var(--navy) 100%);
+  background: linear-gradient(160deg, #030f1a 0%, var(--navy-dark) 40%, var(--navy) 100%);
 }
 
 .tx-pricing-grid {
@@ -809,7 +809,7 @@ body {
 }
 
 .tx-price-card.featured {
-  border-color: var(--gold);
+  border-color: #fff;
   background: rgba(240,185,11,0.06);
 }
 
@@ -818,8 +818,8 @@ body {
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--gold);
-  color: var(--navy-dark);
+  background: #ffffff;
+  color: var(--navy);
   font-size: 11px;
   font-weight: 700;
   padding: 4px 16px;
@@ -843,7 +843,7 @@ body {
   font-family: var(--font-heading);
   font-size: 36px;
   font-weight: 800;
-  color: var(--gold);
+  color: #fff;
   margin-bottom: 4px;
 }
 
@@ -876,7 +876,7 @@ body {
 }
 
 .tx-price-features li i {
-  color: var(--gold);
+  color: #fff;
   font-size: 10px;
   flex-shrink: 0;
 }
@@ -924,7 +924,7 @@ body {
 .tx-faq-a {
   font-size: 14px;
   line-height: 1.85;
-  color: #777;
+  color: #555;
   padding-left: 28px;
 }
 
@@ -932,7 +932,7 @@ body {
    12. CTA
 =================================================== */
 .tx-cta {
-  background: linear-gradient(160deg, #0f2b3d, var(--navy));
+  background: linear-gradient(160deg, #030f1a, var(--navy));
   padding: 88px 0;
   text-align: center;
   position: relative;
@@ -1426,7 +1426,7 @@ body {
 <section class="tx-pricing tx-section">
   <div class="tx-container">
     <div class="tx-center tx-fade">
-      <div class="tx-eyebrow" style="color: var(--gold);">Pricing</div>
+      <div class="tx-eyebrow" style="color: #fff;">Pricing</div>
       <h2 class="tx-section-title" style="color: #fff;">税務顧問料金表</h2>
       <p class="tx-section-sub" style="color: rgba(255,255,255,0.6);">年間売上高に応じたシンプルな料金体系。記帳代行・決算申告・税務相談をすべて含みます。</p>
     </div>
@@ -1442,7 +1442,7 @@ body {
               <th style="padding: 14px 16px; text-align: left; color: #fff; font-size: 13px; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.1);">年間売上高</th>
               <th style="padding: 14px 16px; text-align: right; color: #fff; font-size: 13px; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.1);">月額顧問料</th>
               <th style="padding: 14px 16px; text-align: right; color: #fff; font-size: 13px; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.1);">決算料</th>
-              <th style="padding: 14px 16px; text-align: right; color: var(--gold); font-size: 13px; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.1);">年間報酬</th>
+              <th style="padding: 14px 16px; text-align: right; color: #fff; font-size: 13px; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.1);">年間報酬</th>
             </tr>
           </thead>
           <tbody>
@@ -1450,49 +1450,49 @@ body {
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px;">1,000万円未満</td>
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">20,000</td>
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.5); font-size: 14px; text-align: right;">0</td>
-              <td style="padding: 12px 16px; color: var(--gold); font-size: 14px; font-weight: 600; text-align: right;">240,000</td>
+              <td style="padding: 12px 16px; color: #fff; font-size: 14px; font-weight: 600; text-align: right;">240,000</td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px;">1,000万〜2,000万円</td>
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">25,000</td>
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.5); font-size: 14px; text-align: right;">0</td>
-              <td style="padding: 12px 16px; color: var(--gold); font-size: 14px; font-weight: 600; text-align: right;">300,000</td>
+              <td style="padding: 12px 16px; color: #fff; font-size: 14px; font-weight: 600; text-align: right;">300,000</td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px;">2,000万〜3,000万円</td>
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">25,000</td>
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">50,000</td>
-              <td style="padding: 12px 16px; color: var(--gold); font-size: 14px; font-weight: 600; text-align: right;">350,000</td>
+              <td style="padding: 12px 16px; color: #fff; font-size: 14px; font-weight: 600; text-align: right;">350,000</td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px;">3,000万〜5,000万円</td>
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">30,000</td>
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">100,000</td>
-              <td style="padding: 12px 16px; color: var(--gold); font-size: 14px; font-weight: 600; text-align: right;">460,000</td>
+              <td style="padding: 12px 16px; color: #fff; font-size: 14px; font-weight: 600; text-align: right;">460,000</td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px;">5,000万〜1億円</td>
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">40,000</td>
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">150,000</td>
-              <td style="padding: 12px 16px; color: var(--gold); font-size: 14px; font-weight: 600; text-align: right;">630,000</td>
+              <td style="padding: 12px 16px; color: #fff; font-size: 14px; font-weight: 600; text-align: right;">630,000</td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px;">1億〜2億円</td>
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">50,000</td>
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">200,000</td>
-              <td style="padding: 12px 16px; color: var(--gold); font-size: 14px; font-weight: 600; text-align: right;">800,000</td>
+              <td style="padding: 12px 16px; color: #fff; font-size: 14px; font-weight: 600; text-align: right;">800,000</td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px;">2億〜3億円</td>
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">70,000</td>
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">300,000</td>
-              <td style="padding: 12px 16px; color: var(--gold); font-size: 14px; font-weight: 600; text-align: right;">1,140,000</td>
+              <td style="padding: 12px 16px; color: #fff; font-size: 14px; font-weight: 600; text-align: right;">1,140,000</td>
             </tr>
             <tr>
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px;">3億〜5億円</td>
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">90,000〜</td>
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">400,000〜</td>
-              <td style="padding: 12px 16px; color: var(--gold); font-size: 14px; font-weight: 600; text-align: right;">1,480,000〜</td>
+              <td style="padding: 12px 16px; color: #fff; font-size: 14px; font-weight: 600; text-align: right;">1,480,000〜</td>
             </tr>
           </tbody>
         </table>
@@ -1504,27 +1504,27 @@ body {
       <h3 style="color: #fff; font-size: 18px; font-weight: 700; margin-bottom: 16px;">顧問料に含まれる業務範囲</h3>
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
         <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 16px; text-align: center;">
-          <i class="fas fa-comments" style="color: var(--gold); font-size: 20px; margin-bottom: 8px; display: block;"></i>
+          <i class="fas fa-comments" style="color: #fff; font-size: 20px; margin-bottom: 8px; display: block;"></i>
           <div style="color: #fff; font-size: 13px; font-weight: 600;">税務相談</div>
         </div>
         <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 16px; text-align: center;">
-          <i class="fas fa-file-alt" style="color: var(--gold); font-size: 20px; margin-bottom: 8px; display: block;"></i>
+          <i class="fas fa-file-alt" style="color: #fff; font-size: 20px; margin-bottom: 8px; display: block;"></i>
           <div style="color: #fff; font-size: 13px; font-weight: 600;">税務書類届出代行</div>
         </div>
         <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 16px; text-align: center;">
-          <i class="fas fa-pen" style="color: var(--gold); font-size: 20px; margin-bottom: 8px; display: block;"></i>
+          <i class="fas fa-pen" style="color: #fff; font-size: 20px; margin-bottom: 8px; display: block;"></i>
           <div style="color: #fff; font-size: 13px; font-weight: 600;">記帳代行</div>
         </div>
         <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 16px; text-align: center;">
-          <i class="fas fa-calendar-check" style="color: var(--gold); font-size: 20px; margin-bottom: 8px; display: block;"></i>
+          <i class="fas fa-calendar-check" style="color: #fff; font-size: 20px; margin-bottom: 8px; display: block;"></i>
           <div style="color: #fff; font-size: 13px; font-weight: 600;">年末調整（5名分）</div>
         </div>
         <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 16px; text-align: center;">
-          <i class="fas fa-building" style="color: var(--gold); font-size: 20px; margin-bottom: 8px; display: block;"></i>
+          <i class="fas fa-building" style="color: #fff; font-size: 20px; margin-bottom: 8px; display: block;"></i>
           <div style="color: #fff; font-size: 13px; font-weight: 600;">法定調書・償却資産</div>
         </div>
         <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 16px; text-align: center;">
-          <i class="fas fa-piggy-bank" style="color: var(--gold); font-size: 20px; margin-bottom: 8px; display: block;"></i>
+          <i class="fas fa-piggy-bank" style="color: #fff; font-size: 20px; margin-bottom: 8px; display: block;"></i>
           <div style="color: #fff; font-size: 13px; font-weight: 600;">節税・経費削減アドバイス</div>
         </div>
       </div>
@@ -1540,21 +1540,21 @@ body {
           <thead>
             <tr style="background: rgba(255,255,255,0.08);">
               <th style="padding: 14px 16px; text-align: left; color: #fff; font-size: 13px; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.1);">年間売上高</th>
-              <th style="padding: 14px 16px; text-align: right; color: var(--gold); font-size: 13px; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.1);">決算料（税抜）</th>
+              <th style="padding: 14px 16px; text-align: right; color: #fff; font-size: 13px; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.1);">決算料（税抜）</th>
             </tr>
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px;">1,000万円未満</td>
-              <td style="padding: 12px 16px; color: var(--gold); font-size: 14px; font-weight: 600; text-align: right;">100,000</td>
+              <td style="padding: 12px 16px; color: #fff; font-size: 14px; font-weight: 600; text-align: right;">100,000</td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px;">1,000万〜3,000万円</td>
-              <td style="padding: 12px 16px; color: var(--gold); font-size: 14px; font-weight: 600; text-align: right;">150,000</td>
+              <td style="padding: 12px 16px; color: #fff; font-size: 14px; font-weight: 600; text-align: right;">150,000</td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px;">3,000万〜5,000万円</td>
-              <td style="padding: 12px 16px; color: var(--gold); font-size: 14px; font-weight: 600; text-align: right;">200,000</td>
+              <td style="padding: 12px 16px; color: #fff; font-size: 14px; font-weight: 600; text-align: right;">200,000</td>
             </tr>
             <tr>
               <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px;">5,000万円以上</td>
@@ -1642,6 +1642,11 @@ body {
     </div>
   </div>
 </section>
+
+<!-- ===== FOOTER ===== -->
+<footer style="background: var(--navy); padding: 32px 0; text-align: center;">
+  <p style="color: rgba(255,255,255,0.5); font-size: 12px; margin: 0;">&copy;2026 Hatenabase,inc.</p>
+</footer>
 
 <!-- ===== Fade-in Script ===== -->
 <script>
