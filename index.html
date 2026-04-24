@@ -127,8 +127,10 @@ body{font-family:var(--font);font-size:16px;line-height:1.8;color:var(--text);ba
 =================================================== */
 .s-trust{background:var(--white);padding:28px 0;border-bottom:1px solid var(--border)}
 .s-trust-inner{display:flex;justify-content:center;align-items:center;gap:36px;flex-wrap:wrap}
-.s-trust-item{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--navy)}
+.s-trust-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--navy)}
 .s-trust-item i{font-size:14px;color:var(--accent)}
+.s-trust-item img{height:18px;width:auto}
+.s-trust-item .s-trust-logo-slack{height:16px;width:auto}
 
 /* ===================================================
    PROBLEMS
@@ -203,6 +205,8 @@ body{font-family:var(--font);font-size:16px;line-height:1.8;color:var(--text);ba
 .s-comm-card{text-align:center;padding:36px 24px;border-radius:var(--r);border:1px solid var(--border);transition:all .3s var(--ease)}
 .s-comm-card:hover{border-color:var(--navy);box-shadow:0 4px 16px var(--navy-06)}
 .s-comm-icon{width:52px;height:52px;border-radius:50%;background:var(--navy-06);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:22px;color:var(--navy)}
+.s-comm-icon img{height:28px;width:auto}
+.s-comm-icon svg{height:28px;width:auto}
 .s-comm-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px}
 .s-comm-desc{font-size:13px;color:var(--sub);line-height:1.75}
 
@@ -451,9 +455,9 @@ body{font-family:var(--font);font-size:16px;line-height:1.8;color:var(--text);ba
 <section class="s-trust">
   <div class="s-container">
     <div class="s-trust-inner">
-      <div class="s-trust-item"><i class="fas fa-star"></i> freee 5つ星認定</div>
+      <div class="s-trust-item"><img src="images/freee-logo.png" alt="freee"/> freee 5つ星認定</div>
       <div class="s-trust-item"><i class="fas fa-certificate"></i> kintone認定アソシエイト</div>
-      <div class="s-trust-item"><i class="fab fa-slack"></i> Slackでの常時対応</div>
+      <div class="s-trust-item"><svg class="s-trust-logo-slack" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.4 0a5.4 5.4 0 0 0 0 10.8h5.4V5.4A5.4 5.4 0 0 0 19.4 0zm0 14.4H5.4a5.4 5.4 0 0 0 0 10.8h14a5.4 5.4 0 0 0 0-10.8z" fill="#36C5F0"/><path d="M54 19.8a5.4 5.4 0 0 0-10.8 0v5.4H54v-5.4zm-14.4 0V5.4a5.4 5.4 0 0 0-10.8 0v14.4a5.4 5.4 0 0 0 10.8 0z" fill="#2EB67D"/><path d="M34.6 54a5.4 5.4 0 0 0 0-10.8h-5.4v5.4a5.4 5.4 0 0 0 5.4 5.4zm0-14.4h14a5.4 5.4 0 0 0 0-10.8h-14a5.4 5.4 0 0 0 0 10.8z" fill="#ECB22E"/><path d="M0 34.2a5.4 5.4 0 0 0 10.8 0v-5.4H0v5.4zm14.4 0v14.4a5.4 5.4 0 0 0 10.8 0V34.2a5.4 5.4 0 0 0-10.8 0z" fill="#E01E5A"/></svg> Slackでの常時対応</div>
       <div class="s-trust-item"><i class="fas fa-robot"></i> AI記帳対応</div>
       <div class="s-trust-item"><i class="fas fa-users"></i> 社労士連携</div>
     </div>
@@ -862,7 +866,7 @@ body{font-family:var(--font);font-size:16px;line-height:1.8;color:var(--text);ba
     </div>
     <div class="s-comm-grid">
       <div class="s-comm-card s-fade s-d1">
-        <div class="s-comm-icon"><i class="fab fa-slack"></i></div>
+        <div class="s-comm-icon"><svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.4 0a5.4 5.4 0 0 0 0 10.8h5.4V5.4A5.4 5.4 0 0 0 19.4 0zm0 14.4H5.4a5.4 5.4 0 0 0 0 10.8h14a5.4 5.4 0 0 0 0-10.8z" fill="#36C5F0"/><path d="M54 19.8a5.4 5.4 0 0 0-10.8 0v5.4H54v-5.4zm-14.4 0V5.4a5.4 5.4 0 0 0-10.8 0v14.4a5.4 5.4 0 0 0 10.8 0z" fill="#2EB67D"/><path d="M34.6 54a5.4 5.4 0 0 0 0-10.8h-5.4v5.4a5.4 5.4 0 0 0 5.4 5.4zm0-14.4h14a5.4 5.4 0 0 0 0-10.8h-14a5.4 5.4 0 0 0 0 10.8z" fill="#ECB22E"/><path d="M0 34.2a5.4 5.4 0 0 0 10.8 0v-5.4H0v5.4zm14.4 0v14.4a5.4 5.4 0 0 0 10.8 0V34.2a5.4 5.4 0 0 0-10.8 0z" fill="#E01E5A"/></svg></div>
         <h3 class="s-comm-title">Slack</h3>
         <p class="s-comm-desc">専用チャンネルでの日常連絡。スレッドごとにトピックを整理し、複数の相談が同時に進んでも混乱しません。</p>
       </div>
@@ -872,7 +876,7 @@ body{font-family:var(--font);font-size:16px;line-height:1.8;color:var(--text);ba
         <p class="s-comm-desc">月次報告や税務相談はZoom / Google Meetで実施。画面共有でfreeeの画面を見ながらご説明します。</p>
       </div>
       <div class="s-comm-card s-fade s-d3">
-        <div class="s-comm-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+        <div class="s-comm-icon"><img src="images/freee-logo.png" alt="freee"/></div>
         <h3 class="s-comm-title">freee請求書</h3>
         <p class="s-comm-desc">売上請求書はfreee請求書で発行。「保存して取引を登録」を使えば売上の仕訳も自動計上されます。</p>
       </div>
