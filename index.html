@@ -7,1423 +7,643 @@
 <meta name="description" content="freee認定5つ星アドバイザーが在籍。創業・スタートアップの税務顧問なら、はてなベース税理士事務所。AI×クラウド会計で月次決算を最短3営業日で完了。東京・京都対応。"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 <style>
-/* ===== Reset & Base ===== */
-*, *::before, *::after { box-sizing: border-box; }
-body, h1, h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd { margin: 0; padding: 0; }
-img { max-width: 100%; display: block; }
-a { text-decoration: none; color: inherit; }
-ul { list-style: none; }
+/* ===== Reset ===== */
+*,*::before,*::after{box-sizing:border-box}
+body,h1,h2,h3,h4,p,ul,ol,li,figure,blockquote,dl,dd{margin:0;padding:0}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
 
-/* ===== CSS Variables ===== */
-:root {
-  --navy: #0A2846;
-  --navy-dark: #061a30;
-  --navy-light: #1a3d5c;
-  --accent: #0A2846;
-  --accent-light: #e8edf3;
-  --gold: #0A2846;
-  --gold-dark: #061a30;
-  --green: #2ecc71;
-  --body-text: #191919;
-  --divider: #E4E4E4;
-  --bg-gray: #F8F8F8;
-  --bg-white: #ffffff;
-  --font-base: "Zen Kaku Gothic New", sans-serif;
-  --font-heading: "Zen Kaku Gothic New", sans-serif;
-  --shadow-sm: 0 1px 4px rgba(42,87,114,0.06);
-  --shadow-md: 0 4px 20px rgba(42,87,114,0.10);
-  --shadow-lg: 0 12px 40px rgba(42,87,114,0.14);
-  --shadow-xl: 0 20px 60px rgba(42,87,114,0.18);
-  --radius: 16px;
-  --radius-sm: 10px;
-  --radius-btn: 9999px;
-  --transition: 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+/* ===== Tokens ===== */
+:root{
+  --navy:#0A2846;
+  --navy-90:rgba(10,40,70,0.9);
+  --navy-06:rgba(10,40,70,0.06);
+  --navy-12:rgba(10,40,70,0.12);
+  --text:#191919;
+  --sub:#5a5a5a;
+  --muted:#8a8a8a;
+  --border:#e5e5e5;
+  --bg:#f7f7f7;
+  --white:#ffffff;
+  --accent:#2864F0;
+  --font:"Zen Kaku Gothic New",sans-serif;
+  --ease:cubic-bezier(.25,.46,.45,.94);
+  --r:12px;
+  --r-sm:8px;
 }
-
-body {
-  font-family: var(--font-base);
-  font-size: 16px;
-  line-height: 1.75;
-  color: var(--body-text);
-  background-color: var(--bg-white);
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
+body{font-family:var(--font);font-size:16px;line-height:1.8;color:var(--text);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
 /* ===== Layout ===== */
-.tx-container {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
+.s-container{max-width:1080px;margin:0 auto;padding:0 24px}
+.s-section{padding:112px 0}
+.s-center{text-align:center}
 
-.tx-section {
-  padding: 100px 0;
-}
-
-/* ===== Section Elements ===== */
-.tx-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-heading);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 16px;
-}
-
-.tx-eyebrow::before {
-  content: '';
-  width: 28px;
-  height: 2px;
-  background: var(--accent);
-  border-radius: 2px;
-}
-
-.tx-section-title {
-  font-family: var(--font-base);
-  font-size: 30px;
-  font-weight: 700;
-  color: var(--navy);
-  line-height: 1.35;
-  margin-bottom: 14px;
-  letter-spacing: -0.02em;
-}
-
-.tx-section-sub {
-  font-size: 15px;
-  color: #555;
-  margin-bottom: 56px;
-  max-width: 600px;
-  line-height: 1.8;
-}
-
-.tx-center { text-align: center; }
-.tx-center .tx-eyebrow { justify-content: center; }
-.tx-center .tx-section-sub { margin-left: auto; margin-right: auto; }
+/* ===== Typography ===== */
+.s-eyebrow{font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.s-title{font-size:32px;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:16px;letter-spacing:-.02em}
+.s-subtitle{font-size:15px;color:var(--sub);max-width:560px;line-height:1.9;margin-bottom:56px}
+.s-center .s-subtitle{margin-left:auto;margin-right:auto}
 
 /* ===== Buttons ===== */
-.tx-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 15px 36px;
-  border-radius: var(--radius-btn);
-  font-family: var(--font-base);
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: all var(--transition);
-  white-space: nowrap;
-  letter-spacing: 0.02em;
-}
+.s-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:8px;font-family:var(--font);font-size:14px;font-weight:700;cursor:pointer;border:none;transition:all .3s var(--ease)}
+.s-btn-primary{background:var(--navy);color:#fff}
+.s-btn-primary:hover{background:#0d3358;transform:translateY(-2px);box-shadow:0 8px 24px rgba(10,40,70,.2)}
+.s-btn-white{background:#fff;color:var(--navy);border:1px solid var(--border)}
+.s-btn-white:hover{border-color:var(--navy);transform:translateY(-2px)}
+.s-btn-ghost{background:transparent;color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.25)}
+.s-btn-ghost:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.5)}
+.s-btn-group{display:flex;gap:12px;flex-wrap:wrap}
 
-.tx-btn-primary {
-  background: linear-gradient(135deg, var(--navy), var(--navy-light));
-  color: #fff;
-  border-color: transparent;
-  box-shadow: 0 4px 16px rgba(42,87,114,0.3);
-}
-
-.tx-btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 28px rgba(42,87,114,0.4);
-}
-
-.tx-btn-outline-white {
-  background: transparent;
-  color: #fff;
-  border-color: rgba(255,255,255,0.5);
-}
-
-.tx-btn-outline-white:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: #fff;
-  transform: translateY(-2px);
-}
-
-.tx-btn-gold {
-  background: #ffffff;
-  color: var(--navy);
-  border-color: #ffffff;
-  box-shadow: 0 4px 16px rgba(10,40,70,0.15);
-}
-
-.tx-btn-gold:hover {
-  background: #f0f0f0;
-  border-color: #f0f0f0;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(10,40,70,0.25);
-}
-
-.tx-btn-group {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-/* ===== Fade-in ===== */
-.tx-fade {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.tx-fade.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.tx-delay-1 { transition-delay: 0.08s; }
-.tx-delay-2 { transition-delay: 0.16s; }
-.tx-delay-3 { transition-delay: 0.24s; }
-.tx-delay-4 { transition-delay: 0.32s; }
-.tx-delay-5 { transition-delay: 0.40s; }
-.tx-delay-6 { transition-delay: 0.48s; }
+/* ===== Fade ===== */
+.s-fade{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.s-fade.is-visible{opacity:1;transform:translateY(0)}
+.s-d1{transition-delay:.08s}.s-d2{transition-delay:.16s}.s-d3{transition-delay:.24s}
+.s-d4{transition-delay:.32s}.s-d5{transition-delay:.4s}.s-d6{transition-delay:.48s}
 
 /* ===================================================
-   1. HERO — Full-bleed gradient
+   HERO
 =================================================== */
-.tx-hero {
-  background: linear-gradient(155deg, #030f1a 0%, var(--navy-dark) 30%, var(--navy) 60%, var(--navy-light) 100%);
-  padding: 140px 0 110px;
-  position: relative;
-  overflow: hidden;
+.s-hero{
+  background:var(--navy);
+  padding:160px 0 120px;
+  position:relative;
+  overflow:hidden;
 }
+/* Grid pattern */
+.s-hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+  background-size:64px 64px;
+  pointer-events:none;
+}
+/* Glow */
+.s-hero::after{
+  content:'';position:absolute;top:-40%;right:-10%;width:800px;height:800px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(40,100,240,.12) 0%,transparent 60%);
+  pointer-events:none;
+}
+.s-hero-inner{position:relative;z-index:1;flex:1;min-width:0}
+.s-hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:6px 14px;font-size:12px;font-weight:600;color:rgba(255,255,255,.7);margin-bottom:32px}
+.s-hero-badge i{color:var(--accent);font-size:11px}
+.s-hero h1{font-size:clamp(32px,5vw,48px);font-weight:700;color:#fff;line-height:1.3;letter-spacing:-.03em;margin-bottom:24px}
+.s-hero h1 em{font-style:normal;color:var(--accent)}
+.s-hero-sub{font-size:16px;color:rgba(255,255,255,.65);line-height:1.9;margin-bottom:40px}
 
-.tx-hero::before {
-  content: '';
-  position: absolute;
-  top: -120px;
-  right: -100px;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(74,144,217,0.12) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.tx-hero::after {
-  content: '';
-  position: absolute;
-  bottom: -140px;
-  left: -80px;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(240,185,11,0.06) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.tx-hero-layout {
-  display: flex;
-  align-items: center;
-  gap: 48px;
-  position: relative;
-  z-index: 1;
-}
-
-.tx-hero-inner {
-  position: relative;
-  z-index: 1;
-  max-width: 580px;
-  flex: 1;
-}
-
-.tx-hero-illust {
-  flex-shrink: 0;
-  width: 320px;
-}
-
-.tx-hero-illust img {
-  width: 100%;
-  height: auto;
-  filter: drop-shadow(0 8px 32px rgba(0,0,0,0.3));
-}
-
-.tx-hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 99px;
-  padding: 6px 16px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 28px;
-  backdrop-filter: blur(8px);
-}
-
-.tx-hero-badge i {
-  font-size: 11px;
-}
-
-.tx-hero-title {
-  font-family: var(--font-base);
-  font-size: 42px;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
-  margin-bottom: 24px;
-}
-
-.tx-hero-title em {
-  font-style: normal;
-  color: #fff;
-}
-
-.tx-hero-sub {
-  font-size: 16px;
-  color: rgba(255,255,255,0.78);
-  line-height: 1.85;
-  margin-bottom: 40px;
-}
-
-.tx-hero-metrics {
-  display: flex;
-  gap: 32px;
-  margin-top: 48px;
-  padding-top: 32px;
-  border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-.tx-hero-metric {
-  text-align: left;
-}
-
-.tx-hero-metric-value {
-  font-family: var(--font-heading);
-  font-size: 32px;
-  font-weight: 800;
-  color: #fff;
-  line-height: 1;
-}
-
-.tx-hero-metric-value small {
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.tx-hero-metric-label {
-  font-size: 12px;
-  color: rgba(255,255,255,0.55);
-  margin-top: 4px;
-}
+/* Metrics */
+.s-metrics{display:flex;gap:48px;margin-top:56px;padding-top:40px;border-top:1px solid rgba(255,255,255,.08)}
+.s-metric-val{font-size:clamp(28px,4vw,40px);font-weight:700;color:#fff;line-height:1}
+.s-metric-val small{font-size:14px;font-weight:400;color:rgba(255,255,255,.5)}
+.s-metric-label{font-size:12px;color:rgba(255,255,255,.4);margin-top:4px}
 
 /* ===================================================
-   2. TRUST BAR
+   TRUST
 =================================================== */
-.tx-trust {
-  background: var(--bg-white);
-  padding: 32px 0;
-  border-bottom: 1px solid var(--divider);
-}
-
-.tx-trust-inner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.tx-trust-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--navy);
-}
-
-.tx-trust-item i {
-  font-size: 16px;
-  color: var(--accent);
-}
+.s-trust{background:var(--white);padding:28px 0;border-bottom:1px solid var(--border)}
+.s-trust-inner{display:flex;justify-content:center;align-items:center;gap:36px;flex-wrap:wrap}
+.s-trust-item{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--navy)}
+.s-trust-item i{font-size:14px;color:var(--accent)}
 
 /* ===================================================
-   3. PROBLEMS
+   PROBLEMS
 =================================================== */
-.tx-problems {
-  background: var(--bg-gray);
-}
-
-.tx-problems-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
-
-.tx-problem-card {
-  background: var(--bg-white);
-  border-radius: var(--radius-sm);
-  padding: 28px 24px;
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  border: 1px solid transparent;
-  transition: all var(--transition);
-}
-
-.tx-problem-card:hover {
-  border-color: var(--accent);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-}
-
-.tx-problem-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-sm);
-  background: var(--accent-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  color: var(--accent);
-  font-size: 18px;
-}
-
-.tx-problem-text {
-  font-size: 15px;
-  line-height: 1.7;
-  font-weight: 500;
-}
-
-.tx-problem-text strong {
-  color: var(--navy);
-}
+.s-problems{background:var(--bg)}
+.s-problems-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.s-problem-card{background:var(--white);border-radius:var(--r);padding:28px 24px;display:flex;align-items:flex-start;gap:16px;border:1px solid var(--border);transition:all .3s var(--ease)}
+.s-problem-card:hover{border-color:var(--navy);box-shadow:0 4px 16px var(--navy-06)}
+.s-problem-icon{width:40px;height:40px;border-radius:var(--r-sm);background:var(--navy-06);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--navy);font-size:16px}
+.s-problem-text{font-size:14px;line-height:1.8;color:var(--sub)}
+.s-problem-text strong{color:var(--navy)}
 
 /* ===================================================
-   4. STRENGTHS
+   STRENGTHS
 =================================================== */
-.tx-strengths {
-  background: var(--bg-white);
-}
-
-.tx-strengths-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-}
-
-.tx-strength-card {
-  background: var(--bg-white);
-  border-radius: var(--radius);
-  padding: 40px 28px 36px;
-  box-shadow: var(--shadow-md);
-  position: relative;
-  overflow: hidden;
-  transition: all var(--transition);
-}
-
-.tx-strength-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--navy), var(--accent));
-}
-
-.tx-strength-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-xl);
-}
-
-.tx-strength-num {
-  font-family: var(--font-heading);
-  font-size: 48px;
-  font-weight: 800;
-  color: rgba(42,87,114,0.06);
-  line-height: 1;
-  margin-bottom: 8px;
-}
-
-.tx-strength-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, var(--navy), var(--accent));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 22px;
-  margin-bottom: 20px;
-}
-
-.tx-strength-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 12px;
-  line-height: 1.4;
-}
-
-.tx-strength-desc {
-  font-size: 14px;
-  line-height: 1.85;
-  color: #555;
-}
+.s-strengths{background:var(--white)}
+.s-strengths-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.s-strength-card{background:var(--white);border-radius:var(--r);padding:40px 28px 36px;border:1px solid var(--border);position:relative;transition:all .3s var(--ease)}
+.s-strength-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--navy);border-radius:var(--r) var(--r) 0 0}
+.s-strength-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px var(--navy-06)}
+.s-strength-num{font-size:48px;font-weight:700;color:var(--navy-06);line-height:1;margin-bottom:8px}
+.s-strength-icon{width:48px;height:48px;border-radius:var(--r-sm);background:var(--navy);display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;margin-bottom:20px}
+.s-strength-title{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:12px;line-height:1.4}
+.s-strength-desc{font-size:14px;line-height:1.9;color:var(--sub)}
 
 /* ===================================================
-   5. ONBOARDING (from setup doc)
+   ONBOARDING
 =================================================== */
-.tx-onboarding {
-  background: var(--bg-gray);
-}
-
-.tx-onboard-timeline {
-  position: relative;
-  max-width: 720px;
-  margin: 0 auto;
-}
-
-.tx-onboard-timeline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 32px;
-  bottom: 0;
-  width: 2px;
-  background: var(--divider);
-}
-
-.tx-onboard-step {
-  display: flex;
-  gap: 24px;
-  margin-bottom: 40px;
-  position: relative;
-}
-
-.tx-onboard-step:last-child {
-  margin-bottom: 0;
-}
-
-.tx-onboard-dot {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: var(--bg-white);
-  border: 2px solid var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  font-family: var(--font-heading);
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--accent);
-  z-index: 1;
-  box-shadow: var(--shadow-sm);
-}
-
-.tx-onboard-content {
-  background: var(--bg-white);
-  border-radius: var(--radius);
-  padding: 28px 32px;
-  flex: 1;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--divider);
-  transition: all var(--transition);
-}
-
-.tx-onboard-content:hover {
-  box-shadow: var(--shadow-md);
-  border-color: var(--accent);
-}
-
-.tx-onboard-title {
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 8px;
-}
-
-.tx-onboard-desc {
-  font-size: 14px;
-  line-height: 1.8;
-  color: #555;
-}
-
-.tx-onboard-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 12px;
-}
-
-.tx-onboard-tag {
-  font-size: 11px;
-  font-weight: 600;
-  padding: 3px 10px;
-  border-radius: 99px;
-  background: var(--accent-light);
-  color: var(--accent);
-}
+.s-onboarding{background:var(--bg)}
+.s-timeline{position:relative;max-width:720px;margin:0 auto}
+.s-timeline::before{content:'';position:absolute;top:0;left:32px;bottom:0;width:2px;background:var(--border)}
+.s-step{display:flex;gap:24px;margin-bottom:40px;position:relative}
+.s-step:last-child{margin-bottom:0}
+.s-step-dot{width:64px;height:64px;border-radius:50%;background:var(--white);border:2px solid var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px;font-weight:700;color:var(--navy);z-index:1}
+.s-step-body{background:var(--white);border-radius:var(--r);padding:28px 32px;flex:1;border:1px solid var(--border);transition:all .3s var(--ease)}
+.s-step-body:hover{border-color:var(--navy);box-shadow:0 4px 16px var(--navy-06)}
+.s-step-title{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.s-step-desc{font-size:14px;line-height:1.85;color:var(--sub)}
+.s-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.s-tag{font-size:11px;font-weight:600;padding:3px 10px;border-radius:4px;background:var(--navy-06);color:var(--navy)}
 
 /* ===================================================
-   6. SERVICES
+   SERVICES
 =================================================== */
-.tx-services {
-  background: var(--bg-white);
-}
-
-.tx-services-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-
-.tx-service-card {
-  background: var(--bg-white);
-  border-radius: var(--radius);
-  padding: 36px 28px;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--divider);
-  transition: all var(--transition);
-  position: relative;
-}
-
-.tx-service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--accent);
-}
-
-.tx-service-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: var(--accent-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--accent);
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-.tx-service-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 10px;
-}
-
-.tx-service-desc {
-  font-size: 14px;
-  line-height: 1.85;
-  color: #555;
-  margin-bottom: 16px;
-}
-
-.tx-service-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.tx-service-tag {
-  font-size: 11px;
-  font-weight: 600;
-  padding: 3px 10px;
-  border-radius: 99px;
-  background: rgba(42,87,114,0.06);
-  color: var(--navy);
-}
+.s-services{background:var(--white)}
+.s-services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.s-service-card{background:var(--white);border-radius:var(--r);padding:32px 24px;border:1px solid var(--border);transition:all .3s var(--ease)}
+.s-service-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px var(--navy-06);border-color:var(--navy)}
+.s-service-icon{width:44px;height:44px;border-radius:var(--r-sm);background:var(--navy-06);display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:18px;margin-bottom:16px}
+.s-service-title{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.s-service-desc{font-size:13px;line-height:1.85;color:var(--sub);margin-bottom:14px}
 
 /* ===================================================
-   7. BOOKKEEPING FLOW
+   BOOKKEEPING FLOW
 =================================================== */
-.tx-bookkeeping {
-  background: var(--bg-gray);
-}
-
-.tx-flow-diagram {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.tx-flow-row {
-  display: flex;
-  align-items: stretch;
-  gap: 0;
-  margin-bottom: 2px;
-}
-
-.tx-flow-actor {
-  width: 100px;
-  padding: 16px 12px;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--bg-white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
-  flex-shrink: 0;
-}
-
-.tx-flow-actor.client { background: var(--accent); }
-.tx-flow-actor.office { background: var(--navy); }
-
-.tx-flow-box {
-  flex: 1;
-  background: var(--bg-white);
-  padding: 20px 24px;
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  border: 1px solid var(--divider);
-  border-left: none;
-}
-
-.tx-flow-box h4 {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 4px;
-}
-
-.tx-flow-box p {
-  font-size: 13px;
-  color: #666;
-  line-height: 1.7;
-}
-
-.tx-flow-arrow {
-  display: flex;
-  justify-content: center;
-  padding: 8px 0;
-  color: var(--accent);
-  font-size: 18px;
-}
+.s-flow{background:var(--bg)}
+.s-flow-diagram{max-width:800px;margin:0 auto}
+.s-flow-row{display:flex;align-items:stretch;gap:0;margin-bottom:2px}
+.s-flow-actor{width:100px;padding:16px 12px;font-size:13px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;border-radius:var(--r-sm) 0 0 var(--r-sm);flex-shrink:0}
+.s-flow-actor.client{background:var(--accent)}
+.s-flow-actor.office{background:var(--navy)}
+.s-flow-box{flex:1;background:var(--white);padding:20px 24px;border-radius:0 var(--r-sm) var(--r-sm) 0;border:1px solid var(--border);border-left:none}
+.s-flow-box h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.s-flow-box p{font-size:13px;color:var(--sub);line-height:1.7}
+.s-flow-arrow{display:flex;justify-content:center;padding:8px 0;color:var(--navy);font-size:16px}
 
 /* ===================================================
-   8. COMMUNICATION
+   COMMUNICATION
 =================================================== */
-.tx-comm {
-  background: var(--bg-white);
-}
-
-.tx-comm-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.tx-comm-card {
-  text-align: center;
-  padding: 36px 24px;
-  border-radius: var(--radius);
-  background: var(--bg-gray);
-  transition: all var(--transition);
-}
-
-.tx-comm-card:hover {
-  background: var(--bg-white);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-4px);
-}
-
-.tx-comm-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: var(--bg-white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 16px;
-  font-size: 24px;
-  color: var(--accent);
-  box-shadow: var(--shadow-sm);
-}
-
-.tx-comm-title {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 8px;
-}
-
-.tx-comm-desc {
-  font-size: 13px;
-  color: #666;
-  line-height: 1.75;
-}
+.s-comm{background:var(--white)}
+.s-comm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.s-comm-card{text-align:center;padding:36px 24px;border-radius:var(--r);border:1px solid var(--border);transition:all .3s var(--ease)}
+.s-comm-card:hover{border-color:var(--navy);box-shadow:0 4px 16px var(--navy-06)}
+.s-comm-icon{width:52px;height:52px;border-radius:50%;background:var(--navy-06);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:22px;color:var(--navy)}
+.s-comm-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.s-comm-desc{font-size:13px;color:var(--sub);line-height:1.75}
 
 /* ===================================================
-   9. EXPENSES NOTE
+   EXPENSES
 =================================================== */
-.tx-expenses {
-  background: var(--bg-gray);
-}
-
-.tx-expenses-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.tx-expense-card {
-  background: var(--bg-white);
-  border-radius: var(--radius);
-  padding: 28px 24px;
-  border-left: 3px solid var(--accent);
-}
-
-.tx-expense-title {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 8px;
-}
-
-.tx-expense-desc {
-  font-size: 13px;
-  line-height: 1.8;
-  color: #555;
-}
+.s-expenses{background:var(--bg)}
+.s-expenses-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:800px;margin:0 auto}
+.s-expense-card{background:var(--white);border-radius:var(--r);padding:28px 24px;border-left:3px solid var(--navy)}
+.s-expense-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.s-expense-desc{font-size:13px;line-height:1.85;color:var(--sub)}
 
 /* ===================================================
-   10. PRICING
+   PRICING
 =================================================== */
-.tx-pricing {
-  background: linear-gradient(160deg, #030f1a 0%, var(--navy-dark) 40%, var(--navy) 100%);
-}
-
-.tx-pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.tx-price-card {
-  background: rgba(255,255,255,0.04);
-  border-radius: var(--radius);
-  padding: 36px 24px;
-  border: 1px solid rgba(255,255,255,0.08);
-  transition: all var(--transition);
-  position: relative;
-}
-
-.tx-price-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255,255,255,0.2);
-}
-
-.tx-price-card.featured {
-  border-color: #fff;
-  background: rgba(240,185,11,0.06);
-}
-
-.tx-price-badge {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #ffffff;
-  color: var(--navy);
-  font-size: 11px;
-  font-weight: 700;
-  padding: 4px 16px;
-  border-radius: 99px;
-}
-
-.tx-price-name {
-  font-size: 18px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 4px;
-}
-
-.tx-price-target {
-  font-size: 12px;
-  color: rgba(255,255,255,0.5);
-  margin-bottom: 20px;
-}
-
-.tx-price-amount {
-  font-family: var(--font-heading);
-  font-size: 36px;
-  font-weight: 800;
-  color: #fff;
-  margin-bottom: 4px;
-}
-
-.tx-price-amount small {
-  font-size: 14px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.5);
-}
-
-.tx-price-note {
-  font-size: 11px;
-  color: rgba(255,255,255,0.4);
-  margin-bottom: 24px;
-}
-
-.tx-price-features {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 28px;
-}
-
-.tx-price-features li {
-  font-size: 13px;
-  color: rgba(255,255,255,0.75);
-  padding: 7px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.tx-price-features li i {
-  color: #fff;
-  font-size: 10px;
-  flex-shrink: 0;
-}
+.s-pricing{background:var(--navy);position:relative;overflow:hidden}
+.s-pricing::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:64px 64px;pointer-events:none}
+.s-pricing-table{width:100%;border-collapse:collapse;background:rgba(255,255,255,.04);border-radius:var(--r);overflow:hidden}
+.s-pricing-table thead tr{background:rgba(255,255,255,.08)}
+.s-pricing-table th{padding:14px 16px;color:#fff;font-size:13px;font-weight:700;border-bottom:1px solid rgba(255,255,255,.1);text-align:left}
+.s-pricing-table th:not(:first-child){text-align:right}
+.s-pricing-table td{padding:12px 16px;font-size:14px;border-bottom:1px solid rgba(255,255,255,.05)}
+.s-pricing-table td:first-child{color:rgba(255,255,255,.8)}
+.s-pricing-table td:not(:first-child){text-align:right;color:rgba(255,255,255,.7)}
+.s-pricing-table td:last-child{color:#fff;font-weight:600}
+.s-pricing-table tr:last-child td{border-bottom:none}
+.s-pricing .s-subtitle{color:rgba(255,255,255,.5)}
+.s-scope-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:48px}
+.s-scope-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-sm);padding:16px;text-align:center}
+.s-scope-item i{color:rgba(255,255,255,.6);font-size:18px;margin-bottom:8px;display:block}
+.s-scope-item span{color:#fff;font-size:13px;font-weight:600}
 
 /* ===================================================
-   11. FAQ
+   FAQ
 =================================================== */
-.tx-faq {
-  background: var(--bg-white);
-}
-
-.tx-faq-list {
-  max-width: 760px;
-  margin: 0 auto;
-}
-
-.tx-faq-item {
-  border-bottom: 1px solid var(--divider);
-  padding: 24px 0;
-}
-
-.tx-faq-item:first-child {
-  border-top: 1px solid var(--divider);
-}
-
-.tx-faq-q {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 10px;
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-}
-
-.tx-faq-q-mark {
-  font-family: var(--font-heading);
-  font-size: 16px;
-  font-weight: 800;
-  color: var(--accent);
-  flex-shrink: 0;
-  line-height: 1.4;
-}
-
-.tx-faq-a {
-  font-size: 14px;
-  line-height: 1.85;
-  color: #555;
-  padding-left: 28px;
-}
+.s-faq{background:var(--white)}
+.s-faq-list{max-width:760px;margin:0 auto}
+.s-faq-item{border-bottom:1px solid var(--border);padding:24px 0}
+.s-faq-item:first-child{border-top:1px solid var(--border)}
+.s-faq-q{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:10px;display:flex;gap:12px;align-items:flex-start}
+.s-faq-qm{font-size:16px;font-weight:700;color:var(--accent);flex-shrink:0;line-height:1.4}
+.s-faq-a{font-size:14px;line-height:1.85;color:var(--sub);padding-left:28px}
 
 /* ===================================================
-   12. CTA
+   CTA
 =================================================== */
-.tx-cta {
-  background: linear-gradient(160deg, #030f1a, var(--navy));
-  padding: 88px 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.tx-cta::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 700px;
-  height: 700px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(74,144,217,0.08) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-.tx-cta-title {
-  font-size: 30px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 16px;
-  position: relative;
-  z-index: 1;
-}
-
-.tx-cta-sub {
-  font-size: 15px;
-  color: rgba(255,255,255,0.7);
-  margin-bottom: 40px;
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  z-index: 1;
-  line-height: 1.8;
-}
+.s-cta{background:var(--navy);padding:100px 0;text-align:center;position:relative;overflow:hidden}
+.s-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(40,100,240,.1) 0%,transparent 60%);pointer-events:none}
+.s-cta h2{font-size:28px;font-weight:700;color:#fff;margin-bottom:16px;position:relative;z-index:1}
+.s-cta p{font-size:15px;color:rgba(255,255,255,.6);margin-bottom:40px;max-width:480px;margin-left:auto;margin-right:auto;position:relative;z-index:1;line-height:1.8}
 
 /* ===================================================
-   13. OFFICE PROFILE
+   PROFILE
 =================================================== */
-.tx-profile {
-  background: var(--bg-gray);
-}
+.s-profile{background:var(--bg)}
+.s-profile-card{background:var(--white);border-radius:var(--r);padding:48px;border:1px solid var(--border);max-width:800px;margin:0 auto}
+.s-profile-card h3{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid var(--border)}
+.s-profile-table{width:100%;border-collapse:collapse}
+.s-profile-table tr{border-bottom:1px solid var(--border)}
+.s-profile-table tr:last-child{border-bottom:none}
+.s-profile-table th,.s-profile-table td{padding:14px 16px;font-size:14px;text-align:left;vertical-align:top}
+.s-profile-table th{color:var(--navy);font-weight:600;width:28%;white-space:nowrap}
+.s-profile-table td{color:var(--sub)}
 
-.tx-profile-card {
-  background: var(--bg-white);
-  border-radius: var(--radius);
-  padding: 48px;
-  box-shadow: var(--shadow-md);
-  max-width: 800px;
-  margin: 0 auto;
-}
+/* ===== Footer ===== */
+.s-footer{background:var(--navy);padding:32px 0;text-align:center}
+.s-footer p{color:rgba(255,255,255,.4);font-size:12px}
 
-.tx-profile-card h3 {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 24px;
-  padding-bottom: 16px;
-  border-bottom: 2px solid var(--divider);
-}
+/* ===== Hero Grid ===== */
+.s-hero-grid{display:flex;align-items:center;gap:48px}
+.s-hero-visual{flex:0 0 420px;position:relative;z-index:1}
+@keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.s-hero-visual svg{width:100%;height:auto;animation:heroFloat 6s ease-in-out infinite}
 
-.tx-profile-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.tx-profile-table tr {
-  border-bottom: 1px solid var(--divider);
-}
-
-.tx-profile-table tr:last-child {
-  border-bottom: none;
-}
-
-.tx-profile-table th,
-.tx-profile-table td {
-  padding: 14px 16px;
-  font-size: 14px;
-  text-align: left;
-  vertical-align: top;
-}
-
-.tx-profile-table th {
-  color: var(--navy);
-  font-weight: 600;
-  width: 28%;
-  white-space: nowrap;
-}
-
-.tx-profile-table td {
-  color: #666;
-}
-
-/* ===================================================
-   SECTION ILLUSTRATION
-=================================================== */
-.tx-section-illust {
-  text-align: center;
-  margin-top: 48px;
-}
-
-.tx-section-illust img {
-  max-width: 220px;
-  height: auto;
-  margin: 0 auto;
-  opacity: 0.85;
-}
-
-.tx-cta-illust {
-  margin-bottom: 32px;
-}
-
-.tx-cta-illust img {
-  max-width: 180px;
-  height: auto;
-  margin: 0 auto;
-  opacity: 0.9;
-}
+/* ===== Section Illustrations ===== */
+.s-section-illust{text-align:center;padding:0 24px;max-width:1080px;margin:0 auto}
+.s-section-illust svg{max-width:480px;margin:0 auto;display:block}
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 991px) {
-  .tx-hero-title { font-size: 32px; }
-  .tx-hero-metrics { flex-wrap: wrap; gap: 24px; }
-  .tx-problems-grid { grid-template-columns: 1fr; }
-  .tx-strengths-grid { grid-template-columns: 1fr; }
-  .tx-services-grid { grid-template-columns: 1fr; }
-  .tx-comm-grid { grid-template-columns: 1fr; }
-  .tx-pricing-grid { grid-template-columns: 1fr; }
-  .tx-expenses-grid { grid-template-columns: 1fr; }
-  .tx-profile-card { padding: 32px 24px; }
-  .tx-hero-layout { flex-direction: column; text-align: center; }
-  .tx-hero-illust { width: 240px; order: -1; }
-  .tx-hero-inner { max-width: 100%; }
-  .tx-hero .tx-btn-group { justify-content: center; }
-  .tx-hero-metrics { justify-content: center; }
+@media(max-width:991px){
+  .s-hero-grid{flex-direction:column;gap:40px}
+  .s-hero-visual{flex:none;max-width:400px;width:100%}
+  .s-section-illust svg{max-width:360px}
+  .s-hero h1{font-size:32px}
+  .s-metrics{flex-wrap:wrap;gap:32px}
+  .s-problems-grid,.s-services-grid,.s-expenses-grid{grid-template-columns:1fr}
+  .s-strengths-grid,.s-comm-grid,.s-scope-grid{grid-template-columns:1fr}
+  .s-profile-card{padding:32px 24px}
 }
-
-@media (max-width: 767px) {
-  .tx-hero { padding: 80px 0 60px; }
-  .tx-hero-title { font-size: 26px; }
-  .tx-section { padding: 64px 0; }
-  .tx-section-title { font-size: 24px; }
-  .tx-trust-inner { gap: 20px; }
-  .tx-trust-item { font-size: 12px; }
-  .tx-onboard-dot { width: 48px; height: 48px; font-size: 16px; }
-  .tx-onboard-timeline::before { left: 24px; }
-  .tx-cta-title { font-size: 24px; }
-  .tx-hero-illust { width: 200px; }
-  .tx-section-illust img { max-width: 160px; }
+@media(max-width:767px){
+  .s-hero-visual{max-width:300px}
+  .s-section-illust svg{max-width:260px}
+  .s-hero{padding:100px 0 80px}
+  .s-section{padding:80px 0}
+  .s-title{font-size:24px}
+  .s-metrics{gap:24px}
+  .s-trust-inner{gap:16px}
+  .s-trust-item{font-size:12px}
+  .s-step-dot{width:48px;height:48px;font-size:16px}
+  .s-timeline::before{left:24px}
+  .s-flow-actor{width:72px;font-size:11px}
 }
 </style>
 </head>
 <body>
 
 <!-- ===== HERO ===== -->
-<section class="tx-hero">
-  <div class="tx-container">
-    <div class="tx-hero-layout">
-    <div class="tx-hero-inner tx-fade">
-      <div class="tx-hero-badge"><i class="fas fa-star"></i> freee 5つ星認定アドバイザー</div>
-      <h1 class="tx-hero-title">
-        <em>人生を賭ける事業に、</em><br/>
-        最高のスタートダッシュを。
-      </h1>
-      <p class="tx-hero-sub">
+<section class="s-hero">
+  <div class="s-container">
+    <div class="s-hero-grid">
+    <div class="s-hero-inner s-fade">
+      <div class="s-hero-badge"><i class="fas fa-star"></i> freee 5つ星認定アドバイザー</div>
+      <h1><em>人生を賭ける事業に、</em><br/>最高のスタートダッシュを。</h1>
+      <p class="s-hero-sub">
         私たちは「創業期の挑戦」を支援する、創業期に強い会計事務所です。<br/>
         freee会計を軸に、記帳から申告まで会社の税金をまるっとお任せ。<br/>
         経営者ご自身は売上を上げるための経営や営業活動に集中できます。
       </p>
-      <div class="tx-btn-group">
-        <a href="#contact" class="tx-btn tx-btn-gold">
-          <i class="fas fa-paper-plane"></i> 無料相談を予約する
-        </a>
-        <a href="#services" class="tx-btn tx-btn-outline-white">
-          <i class="fas fa-arrow-down"></i> サービスを見る
-        </a>
+      <div class="s-btn-group">
+        <a href="#contact" class="s-btn s-btn-primary"><i class="fas fa-paper-plane"></i> 無料相談を予約する</a>
+        <a href="#services" class="s-btn s-btn-ghost"><i class="fas fa-arrow-down"></i> サービスを見る</a>
       </div>
-      <div class="tx-hero-metrics">
-        <div class="tx-hero-metric">
-          <div class="tx-hero-metric-value">80<small>社+</small></div>
-          <div class="tx-hero-metric-label">顧問先企業数</div>
+      <div class="s-metrics">
+        <div>
+          <div class="s-metric-val">80<small>社+</small></div>
+          <div class="s-metric-label">顧問先企業数</div>
         </div>
-        <div class="tx-hero-metric">
-          <div class="tx-hero-metric-value">50<small>社超</small></div>
-          <div class="tx-hero-metric-label">創業融資支援実績</div>
+        <div>
+          <div class="s-metric-val">50<small>社超</small></div>
+          <div class="s-metric-label">創業融資支援実績</div>
         </div>
-        <div class="tx-hero-metric">
-          <div class="tx-hero-metric-value">3<small>億円超</small></div>
-          <div class="tx-hero-metric-label">総調達額</div>
+        <div>
+          <div class="s-metric-val">3<small>億円超</small></div>
+          <div class="s-metric-label">総調達額</div>
         </div>
-        <div class="tx-hero-metric">
-          <div class="tx-hero-metric-value">2<small>拠点</small></div>
-          <div class="tx-hero-metric-label">東京・京都</div>
+        <div>
+          <div class="s-metric-val">2<small>拠点</small></div>
+          <div class="s-metric-label">東京・京都</div>
         </div>
       </div>
     </div>
-    <div class="tx-hero-illust tx-fade tx-delay-2">
-      <img src="images/hero-accounting.png" alt="経理イメージ"/>
+    <div class="s-hero-visual s-fade s-d2">
+      <svg viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Monitor frame -->
+        <rect x="32" y="16" width="320" height="210" rx="12" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+        <rect x="32" y="16" width="320" height="30" rx="12" fill="rgba(255,255,255,0.04)"/>
+        <circle cx="52" cy="31" r="3" fill="rgba(255,255,255,0.15)"/>
+        <circle cx="63" cy="31" r="3" fill="rgba(255,255,255,0.15)"/>
+        <circle cx="74" cy="31" r="3" fill="rgba(255,255,255,0.15)"/>
+        <!-- Sidebar -->
+        <rect x="32" y="46" width="56" height="180" fill="rgba(255,255,255,0.025)"/>
+        <rect x="44" y="62" width="32" height="3" rx="1.5" fill="rgba(255,255,255,0.08)"/>
+        <rect x="44" y="76" width="32" height="3" rx="1.5" fill="rgba(40,100,240,0.4)"/>
+        <rect x="44" y="90" width="32" height="3" rx="1.5" fill="rgba(255,255,255,0.08)"/>
+        <rect x="44" y="104" width="32" height="3" rx="1.5" fill="rgba(255,255,255,0.08)"/>
+        <!-- Chart bars -->
+        <rect x="106" y="148" width="18" height="32" rx="3" fill="rgba(40,100,240,0.25)"/>
+        <rect x="132" y="132" width="18" height="48" rx="3" fill="rgba(40,100,240,0.35)"/>
+        <rect x="158" y="118" width="18" height="62" rx="3" fill="rgba(40,100,240,0.45)"/>
+        <rect x="184" y="100" width="18" height="80" rx="3" fill="rgba(40,100,240,0.6)"/>
+        <rect x="210" y="110" width="18" height="70" rx="3" fill="rgba(40,100,240,0.5)"/>
+        <rect x="236" y="88" width="18" height="92" rx="3" fill="rgba(40,100,240,0.75)"/>
+        <rect x="262" y="78" width="18" height="102" rx="3" fill="#2864F0"/>
+        <rect x="288" y="90" width="18" height="90" rx="3" fill="rgba(40,100,240,0.65)"/>
+        <rect x="314" y="72" width="18" height="108" rx="3" fill="#2864F0"/>
+        <!-- Growth line -->
+        <polyline points="115,144 141,128 167,114 193,96 219,106 245,84 271,74 297,86 323,68" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- KPI cards -->
+        <rect x="100" y="192" width="72" height="28" rx="4" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)"/>
+        <rect x="180" y="192" width="72" height="28" rx="4" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)"/>
+        <rect x="260" y="192" width="72" height="28" rx="4" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)"/>
+        <rect x="110" y="200" width="20" height="3" rx="1.5" fill="rgba(255,255,255,0.1)"/>
+        <rect x="110" y="208" width="36" height="5" rx="2" fill="rgba(40,100,240,0.4)"/>
+        <rect x="190" y="200" width="20" height="3" rx="1.5" fill="rgba(255,255,255,0.1)"/>
+        <rect x="190" y="208" width="36" height="5" rx="2" fill="rgba(40,100,240,0.4)"/>
+        <rect x="270" y="200" width="20" height="3" rx="1.5" fill="rgba(255,255,255,0.1)"/>
+        <rect x="270" y="208" width="36" height="5" rx="2" fill="rgba(40,100,240,0.4)"/>
+        <!-- Stand -->
+        <path d="M175 226 L209 226 L220 252 L164 252 Z" fill="rgba(255,255,255,0.04)"/>
+        <rect x="148" y="252" width="88" height="5" rx="2.5" fill="rgba(255,255,255,0.06)"/>
+        <!-- Floating notification -->
+        <rect x="316" y="0" width="84" height="44" rx="8" fill="rgba(40,100,240,0.12)" stroke="rgba(40,100,240,0.25)" stroke-width="1"/>
+        <path d="M332 18 L337 23 L344 14" stroke="#2864F0" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="352" y="15" width="32" height="3" rx="1.5" fill="rgba(255,255,255,0.2)"/>
+        <rect x="352" y="24" width="20" height="3" rx="1.5" fill="rgba(255,255,255,0.1)"/>
+        <!-- Yen circle -->
+        <circle cx="12" cy="120" r="16" fill="rgba(40,100,240,0.08)" stroke="rgba(40,100,240,0.18)" stroke-width="1"/>
+        <text x="12" y="126" text-anchor="middle" font-size="14" font-weight="700" fill="rgba(40,100,240,0.4)" font-family="sans-serif">&#165;</text>
+        <!-- Decorative dots -->
+        <g opacity="0.5">
+          <circle cx="375" cy="180" r="2" fill="rgba(255,255,255,0.08)"/>
+          <circle cx="389" cy="180" r="2" fill="rgba(255,255,255,0.08)"/>
+          <circle cx="375" cy="194" r="2" fill="rgba(255,255,255,0.08)"/>
+          <circle cx="389" cy="194" r="2" fill="rgba(255,255,255,0.08)"/>
+          <circle cx="375" cy="208" r="2" fill="rgba(255,255,255,0.08)"/>
+          <circle cx="389" cy="208" r="2" fill="rgba(255,255,255,0.08)"/>
+        </g>
+        <!-- Growth arrow -->
+        <line x1="0" y1="290" x2="384" y2="274" stroke="rgba(40,100,240,0.1)" stroke-width="1"/>
+        <polygon points="384,274 376,268 376,280" fill="rgba(40,100,240,0.15)"/>
+      </svg>
     </div>
     </div>
   </div>
 </section>
 
 <!-- ===== TRUST BAR ===== -->
-<section class="tx-trust">
-  <div class="tx-container">
-    <div class="tx-trust-inner">
-      <div class="tx-trust-item"><i class="fas fa-star"></i> freee 5つ星認定</div>
-      <div class="tx-trust-item"><i class="fas fa-certificate"></i> kintone認定アソシエイト</div>
-      <div class="tx-trust-item"><i class="fab fa-slack"></i> Slackでの常時対応</div>
-      <div class="tx-trust-item"><i class="fas fa-robot"></i> AI記帳対応</div>
-      <div class="tx-trust-item"><i class="fas fa-users"></i> 社労士連携</div>
+<section class="s-trust">
+  <div class="s-container">
+    <div class="s-trust-inner">
+      <div class="s-trust-item"><i class="fas fa-star"></i> freee 5つ星認定</div>
+      <div class="s-trust-item"><i class="fas fa-certificate"></i> kintone認定アソシエイト</div>
+      <div class="s-trust-item"><i class="fab fa-slack"></i> Slackでの常時対応</div>
+      <div class="s-trust-item"><i class="fas fa-robot"></i> AI記帳対応</div>
+      <div class="s-trust-item"><i class="fas fa-users"></i> 社労士連携</div>
     </div>
   </div>
 </section>
 
 <!-- ===== PROBLEMS ===== -->
-<section class="tx-problems tx-section">
-  <div class="tx-container">
-    <div class="tx-center tx-fade">
-      <div class="tx-eyebrow">Problems</div>
-      <h2 class="tx-section-title">こんなお悩みはありませんか</h2>
-      <p class="tx-section-sub">創業期の経営者が抱える税務・会計の課題に、私たちは向き合ってきました。</p>
+<section class="s-problems s-section">
+  <div class="s-container">
+    <div class="s-center s-fade">
+      <div class="s-eyebrow">Problems</div>
+      <h2 class="s-title">こんなお悩みはありませんか</h2>
+      <p class="s-subtitle">創業期の経営者が抱える税務・会計の課題に、私たちは向き合ってきました。</p>
     </div>
-    <div class="tx-problems-grid">
-      <div class="tx-problem-card tx-fade tx-delay-1">
-        <div class="tx-problem-icon"><i class="fas fa-calculator"></i></div>
-        <p class="tx-problem-text"><strong>記帳や経理に時間を取られ</strong>、本業に集中できない。自分でやるべきか外注すべきか判断がつかない。</p>
+    <div class="s-problems-grid">
+      <div class="s-problem-card s-fade s-d1">
+        <div class="s-problem-icon"><i class="fas fa-calculator"></i></div>
+        <p class="s-problem-text"><strong>記帳や経理に時間を取られ</strong>、本業に集中できない。自分でやるべきか外注すべきか判断がつかない。</p>
       </div>
-      <div class="tx-problem-card tx-fade tx-delay-2">
-        <div class="tx-problem-icon"><i class="fas fa-yen-sign"></i></div>
-        <p class="tx-problem-text"><strong>創業融資や補助金の申請</strong>を考えているが、事業計画書の作り方がわからず進まない。</p>
+      <div class="s-problem-card s-fade s-d2">
+        <div class="s-problem-icon"><i class="fas fa-yen-sign"></i></div>
+        <p class="s-problem-text"><strong>創業融資や補助金の申請</strong>を考えているが、事業計画書の作り方がわからず進まない。</p>
       </div>
-      <div class="tx-problem-card tx-fade tx-delay-3">
-        <div class="tx-problem-icon"><i class="fas fa-chart-line"></i></div>
-        <p class="tx-problem-text"><strong>月次の数字がタイムリーに見えず</strong>、経営判断が後手に回っている。資金繰りの不安がある。</p>
+      <div class="s-problem-card s-fade s-d3">
+        <div class="s-problem-icon"><i class="fas fa-chart-line"></i></div>
+        <p class="s-problem-text"><strong>月次の数字がタイムリーに見えず</strong>、経営判断が後手に回っている。資金繰りの不安がある。</p>
       </div>
-      <div class="tx-problem-card tx-fade tx-delay-4">
-        <div class="tx-problem-icon"><i class="fas fa-cloud"></i></div>
-        <p class="tx-problem-text"><strong>freeeを導入したが使いこなせていない。</strong>自動仕訳のルール設定も銀行連携もできていない。</p>
+      <div class="s-problem-card s-fade s-d4">
+        <div class="s-problem-icon"><i class="fas fa-cloud"></i></div>
+        <p class="s-problem-text"><strong>freeeを導入したが使いこなせていない。</strong>自動仕訳のルール設定も銀行連携もできていない。</p>
       </div>
-      <div class="tx-problem-card tx-fade tx-delay-5">
-        <div class="tx-problem-icon"><i class="fas fa-file-alt"></i></div>
-        <p class="tx-problem-text"><strong>法人設立届出書や青色申告</strong>の届出を出したか曖昧。税務署への提出漏れが心配。</p>
+      <div class="s-problem-card s-fade s-d5">
+        <div class="s-problem-icon"><i class="fas fa-file-alt"></i></div>
+        <p class="s-problem-text"><strong>法人設立届出書や青色申告</strong>の届出を出したか曖昧。税務署への提出漏れが心配。</p>
       </div>
-      <div class="tx-problem-card tx-fade tx-delay-6">
-        <div class="tx-problem-icon"><i class="fas fa-user-tie"></i></div>
-        <p class="tx-problem-text"><strong>役員報酬や経費の処理</strong>に自信がない。税務調査で否認されないか不安がある。</p>
+      <div class="s-problem-card s-fade s-d6">
+        <div class="s-problem-icon"><i class="fas fa-user-tie"></i></div>
+        <p class="s-problem-text"><strong>役員報酬や経費の処理</strong>に自信がない。税務調査で否認されないか不安がある。</p>
       </div>
-    </div>
-    <div class="tx-section-illust tx-fade">
-      <img src="images/idea.png" alt="ひらめき"/>
     </div>
   </div>
 </section>
+
+<!-- Section Illustration: Growth -->
+<div class="s-section-illust s-fade">
+  <svg viewBox="0 0 480 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="240" cy="70" r="60" fill="#2864F0" opacity="0.03"/>
+    <g transform="translate(240, 62) rotate(-30)">
+      <path d="M0 -28 C-8 -16 -10 8 -10 20 L-6 24 L0 20 L6 24 L10 20 C10 8 8 -16 0 -28Z" fill="#0A2846" opacity="0.65"/>
+      <ellipse cx="0" cy="-4" rx="4" ry="5" fill="#2864F0" opacity="0.5"/>
+      <path d="M-10 14 L-16 24 L-10 20Z" fill="#2864F0" opacity="0.35"/>
+      <path d="M10 14 L16 24 L10 20Z" fill="#2864F0" opacity="0.35"/>
+      <path d="M-4 24 L0 36 L4 24" fill="#2864F0" opacity="0.2"/>
+    </g>
+    <circle cx="218" cy="96" r="3" fill="#2864F0" opacity="0.1"/>
+    <circle cx="210" cy="108" r="2" fill="#2864F0" opacity="0.07"/>
+    <circle cx="224" cy="112" r="1.5" fill="#2864F0" opacity="0.05"/>
+    <circle cx="120" cy="30" r="2" fill="#2864F0" opacity="0.12"/>
+    <circle cx="360" cy="50" r="2" fill="#2864F0" opacity="0.12"/>
+    <circle cx="160" cy="100" r="1.5" fill="#2864F0" opacity="0.08"/>
+    <circle cx="320" cy="90" r="1.5" fill="#2864F0" opacity="0.08"/>
+    <circle cx="90" cy="70" r="1" fill="#2864F0" opacity="0.06"/>
+    <circle cx="390" cy="40" r="1" fill="#2864F0" opacity="0.06"/>
+    <ellipse cx="240" cy="70" rx="100" ry="30" fill="none" stroke="#2864F0" stroke-width="0.5" opacity="0.06" stroke-dasharray="6 6"/>
+  </svg>
+</div>
 
 <!-- ===== STRENGTHS ===== -->
-<section class="tx-strengths tx-section">
-  <div class="tx-container">
-    <div class="tx-center tx-fade">
-      <div class="tx-eyebrow">Why Us</div>
-      <h2 class="tx-section-title">はてなベース税理士事務所が選ばれる理由</h2>
-      <p class="tx-section-sub">「日本一創業期に強いバックオフィス支援グループ」を目指し、テクノロジー×税務で経営をサポートします。</p>
+<section class="s-strengths s-section">
+  <div class="s-container">
+    <div class="s-center s-fade">
+      <div class="s-eyebrow">Why Us</div>
+      <h2 class="s-title">はてなベース税理士事務所が選ばれる理由</h2>
+      <p class="s-subtitle">「日本一創業期に強いバックオフィス支援グループ」を目指し、テクノロジー×税務で経営をサポートします。</p>
     </div>
-    <div class="tx-strengths-grid">
-      <div class="tx-strength-card tx-fade tx-delay-1">
-        <div class="tx-strength-num">01</div>
-        <div class="tx-strength-icon"><i class="fas fa-star"></i></div>
-        <h3 class="tx-strength-title">freee 5つ星アドバイザー</h3>
-        <p class="tx-strength-desc">freee認定の最高ランクアドバイザーが在籍。導入設計から自動仕訳ルールの最適化、銀行口座・クレジットカード連携まで、freeeの機能を最大限に活用した経理フローを構築します。</p>
+    <div class="s-strengths-grid">
+      <div class="s-strength-card s-fade s-d1">
+        <div class="s-strength-num">01</div>
+        <div class="s-strength-icon"><i class="fas fa-star"></i></div>
+        <h3 class="s-strength-title">freee 5つ星アドバイザー</h3>
+        <p class="s-strength-desc">freee認定の最高ランクアドバイザーが在籍。導入設計から自動仕訳ルールの最適化、銀行口座・クレジットカード連携まで、freeeの機能を最大限に活用した経理フローを構築します。</p>
       </div>
-      <div class="tx-strength-card tx-fade tx-delay-2">
-        <div class="tx-strength-num">02</div>
-        <div class="tx-strength-icon"><i class="fas fa-robot"></i></div>
-        <h3 class="tx-strength-title">AI×クラウドで圧倒的効率化</h3>
-        <p class="tx-strength-desc">AIエージェントを活用した記帳自動化で月次決算を最短3営業日で完了。freee請求書による売上計上自動化、決済手段連携で立替・現金取引を最小化し、資料のやり取りを減らします。</p>
+      <div class="s-strength-card s-fade s-d2">
+        <div class="s-strength-num">02</div>
+        <div class="s-strength-icon"><i class="fas fa-robot"></i></div>
+        <h3 class="s-strength-title">AI×クラウドで圧倒的効率化</h3>
+        <p class="s-strength-desc">AIエージェントを活用した記帳自動化で月次決算を最短3営業日で完了。freee請求書による売上計上自動化、決済手段連携で立替・現金取引を最小化し、資料のやり取りを減らします。</p>
       </div>
-      <div class="tx-strength-card tx-fade tx-delay-3">
-        <div class="tx-strength-num">03</div>
-        <div class="tx-strength-icon"><i class="fas fa-landmark"></i></div>
-        <h3 class="tx-strength-title">創業融資支援 50社超・3億円超</h3>
-        <p class="tx-strength-desc">日本政策金融公庫を中心に、300〜2,000万円規模の資金調達を成功に導いてきた実績があります。事業計画書の作成から金融機関担当者のご紹介まで。顧問契約のお客様は成果報酬4%で支援します。</p>
+      <div class="s-strength-card s-fade s-d3">
+        <div class="s-strength-num">03</div>
+        <div class="s-strength-icon"><i class="fas fa-landmark"></i></div>
+        <h3 class="s-strength-title">創業融資支援 50社超・3億円超</h3>
+        <p class="s-strength-desc">日本政策金融公庫を中心に、300〜2,000万円規模の資金調達を成功に導いてきた実績があります。事業計画書の作成から金融機関担当者のご紹介まで。顧問契約のお客様は成果報酬4%で支援します。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== ONBOARDING FLOW ===== -->
-<section class="tx-onboarding tx-section">
-  <div class="tx-container">
-    <div class="tx-center tx-fade">
-      <div class="tx-eyebrow">Onboarding</div>
-      <h2 class="tx-section-title">ご契約後のセットアップの流れ</h2>
-      <p class="tx-section-sub">ご契約からサービス開始まで、スムーズにセットアップを進めます。</p>
+<!-- ===== ONBOARDING ===== -->
+<section class="s-onboarding s-section">
+  <div class="s-container">
+    <div class="s-center s-fade">
+      <div class="s-eyebrow">Onboarding</div>
+      <h2 class="s-title">ご契約後のセットアップの流れ</h2>
+      <p class="s-subtitle">ご契約からサービス開始まで、スムーズにセットアップを進めます。</p>
     </div>
-    <div class="tx-onboard-timeline">
-      <div class="tx-onboard-step tx-fade tx-delay-1">
-        <div class="tx-onboard-dot">1</div>
-        <div class="tx-onboard-content">
-          <div class="tx-onboard-title">ヒアリング</div>
-          <div class="tx-onboard-desc">税務書類の控えの有無を確認（法人設立届出書・青色申告承認届出書・給与支払事務所開設届出書・源泉所得税の納期の特例など）。未提出の場合は弊所で代理提出します。記帳に必要な事項もこの段階で確認します。</div>
-          <div class="tx-onboard-tags">
-            <span class="tx-onboard-tag">税務書類確認</span>
-            <span class="tx-onboard-tag">アンケート</span>
-            <span class="tx-onboard-tag">契約締結</span>
-          </div>
+    <div class="s-timeline">
+      <div class="s-step s-fade s-d1">
+        <div class="s-step-dot">1</div>
+        <div class="s-step-body">
+          <div class="s-step-title">ヒアリング</div>
+          <div class="s-step-desc">税務書類の控えの有無を確認（法人設立届出書・青色申告承認届出書・給与支払事務所開設届出書・源泉所得税の納期の特例など）。未提出の場合は弊所で代理提出します。記帳に必要な事項もこの段階で確認します。</div>
+          <div class="s-tags"><span class="s-tag">税務書類確認</span><span class="s-tag">アンケート</span><span class="s-tag">契約締結</span></div>
         </div>
       </div>
-      <div class="tx-onboard-step tx-fade tx-delay-2">
-        <div class="tx-onboard-dot">2</div>
-        <div class="tx-onboard-content">
-          <div class="tx-onboard-title">freee会計のセットアップ</div>
-          <div class="tx-onboard-desc">freee会計へのアドバイザー招待、全ての法人銀行口座・クレジットカード・決済サービスの連携を行います。できるだけ立替や現金取引は避け、freee連携済みの決済手段をご利用いただくことで、資料のやり取りを最小化します。</div>
-          <div class="tx-onboard-tags">
-            <span class="tx-onboard-tag">freee招待</span>
-            <span class="tx-onboard-tag">口座連携</span>
-            <span class="tx-onboard-tag">カード連携</span>
-          </div>
+      <div class="s-step s-fade s-d2">
+        <div class="s-step-dot">2</div>
+        <div class="s-step-body">
+          <div class="s-step-title">freee会計のセットアップ</div>
+          <div class="s-step-desc">freee会計へのアドバイザー招待、全ての法人銀行口座・クレジットカード・決済サービスの連携を行います。できるだけ立替や現金取引は避け、freee連携済みの決済手段をご利用いただくことで、資料のやり取りを最小化します。</div>
+          <div class="s-tags"><span class="s-tag">freee招待</span><span class="s-tag">口座連携</span><span class="s-tag">カード連携</span></div>
         </div>
       </div>
-      <div class="tx-onboard-step tx-fade tx-delay-3">
-        <div class="tx-onboard-dot">3</div>
-        <div class="tx-onboard-content">
-          <div class="tx-onboard-title">Slack開設・コミュニケーション開始</div>
-          <div class="tx-onboard-desc">専用Slackチャンネルを開設し、日常のやり取りはすべてSlackで完結。スレッドごとにトピックを分けることで、複数の話題が同時進行しても混乱しません。担当者個人へのDMではなくチャンネル内でのやり取りをお願いしています。</div>
-          <div class="tx-onboard-tags">
-            <span class="tx-onboard-tag">Slack開設</span>
-            <span class="tx-onboard-tag">スレッド運用</span>
-            <span class="tx-onboard-tag">チャット無制限</span>
-          </div>
+      <div class="s-step s-fade s-d3">
+        <div class="s-step-dot">3</div>
+        <div class="s-step-body">
+          <div class="s-step-title">Slack開設・コミュニケーション開始</div>
+          <div class="s-step-desc">専用Slackチャンネルを開設し、日常のやり取りはすべてSlackで完結。スレッドごとにトピックを分けることで、複数の話題が同時進行しても混乱しません。担当者個人へのDMではなくチャンネル内でのやり取りをお願いしています。</div>
+          <div class="s-tags"><span class="s-tag">Slack開設</span><span class="s-tag">スレッド運用</span><span class="s-tag">チャット無制限</span></div>
         </div>
       </div>
-      <div class="tx-onboard-step tx-fade tx-delay-4">
-        <div class="tx-onboard-dot">4</div>
-        <div class="tx-onboard-content">
-          <div class="tx-onboard-title">記帳代行開始</div>
-          <div class="tx-onboard-desc">毎月の資料・情報をご提供いただき、freeeにて記帳。不明点や不足資料があればSlackで確認し、完了後に月分の記帳完了報告をお送りします。売上請求書はfreee請求書をご利用いただくことで、売上計上まで自動化されます。</div>
-          <div class="tx-onboard-tags">
-            <span class="tx-onboard-tag">月次記帳</span>
-            <span class="tx-onboard-tag">freee請求書</span>
-            <span class="tx-onboard-tag">完了報告</span>
-          </div>
+      <div class="s-step s-fade s-d4">
+        <div class="s-step-dot">4</div>
+        <div class="s-step-body">
+          <div class="s-step-title">記帳代行開始</div>
+          <div class="s-step-desc">毎月の資料・情報をご提供いただき、freeeにて記帳。不明点や不足資料があればSlackで確認し、完了後に月分の記帳完了報告をお送りします。売上請求書はfreee請求書をご利用いただくことで、売上計上まで自動化されます。</div>
+          <div class="s-tags"><span class="s-tag">月次記帳</span><span class="s-tag">freee請求書</span><span class="s-tag">完了報告</span></div>
         </div>
       </div>
-    </div>
-    <div class="tx-section-illust tx-fade">
-      <img src="images/meeting.png" alt="会議"/>
     </div>
   </div>
 </section>
+
+<!-- Section Illustration: Workflow -->
+<div class="s-section-illust s-fade">
+  <svg viewBox="0 0 480 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="208" y="18" width="64" height="64" rx="12" fill="#0A2846" opacity="0.05" stroke="#0A2846" stroke-width="1" stroke-opacity="0.08"/>
+    <rect x="220" y="34" width="40" height="4" rx="2" fill="#0A2846" opacity="0.1"/>
+    <rect x="220" y="44" width="28" height="4" rx="2" fill="#2864F0" opacity="0.2"/>
+    <rect x="220" y="54" width="36" height="4" rx="2" fill="#0A2846" opacity="0.07"/>
+    <rect x="60" y="28" width="48" height="44" rx="8" fill="#2864F0" opacity="0.04" stroke="#2864F0" stroke-width="0.75" stroke-opacity="0.1"/>
+    <rect x="72" y="42" width="24" height="3" rx="1.5" fill="#2864F0" opacity="0.15"/>
+    <rect x="72" y="50" width="16" height="3" rx="1.5" fill="#2864F0" opacity="0.1"/>
+    <rect x="372" y="28" width="48" height="44" rx="8" fill="#2864F0" opacity="0.04" stroke="#2864F0" stroke-width="0.75" stroke-opacity="0.1"/>
+    <rect x="384" y="42" width="24" height="3" rx="1.5" fill="#2864F0" opacity="0.15"/>
+    <rect x="384" y="50" width="16" height="3" rx="1.5" fill="#2864F0" opacity="0.1"/>
+    <line x1="108" y1="50" x2="208" y2="50" stroke="#0A2846" stroke-width="0.75" stroke-opacity="0.08" stroke-dasharray="4 4"/>
+    <line x1="272" y1="50" x2="372" y2="50" stroke="#0A2846" stroke-width="0.75" stroke-opacity="0.08" stroke-dasharray="4 4"/>
+    <polygon points="204,46 208,50 204,54" fill="#0A2846" opacity="0.1"/>
+    <polygon points="368,46 372,50 368,54" fill="#0A2846" opacity="0.1"/>
+  </svg>
+</div>
 
 <!-- ===== SERVICES ===== -->
-<section id="services" class="tx-services tx-section">
-  <div class="tx-container">
-    <div class="tx-center tx-fade">
-      <div class="tx-eyebrow">Services</div>
-      <h2 class="tx-section-title">サービス一覧</h2>
-      <p class="tx-section-sub">創業から成長期まで、ステージに合わせた税務・会計サービスを提供します。</p>
+<section id="services" class="s-services s-section">
+  <div class="s-container">
+    <div class="s-center s-fade">
+      <div class="s-eyebrow">Services</div>
+      <h2 class="s-title">サービス一覧</h2>
+      <p class="s-subtitle">創業から成長期まで、ステージに合わせた税務・会計サービスを提供します。</p>
     </div>
-    <div class="tx-services-grid">
-      <div class="tx-service-card tx-fade tx-delay-1">
-        <div class="tx-service-icon"><i class="fas fa-file-invoice"></i></div>
-        <h3 class="tx-service-title">税務顧問・記帳代行</h3>
-        <p class="tx-service-desc">freeeベースの記帳代行から月次レポート、決算・申告まで。Slackでの日常相談は無制限。freee請求書との連携で売上計上も自動化します。</p>
-        <div class="tx-service-tags">
-          <span class="tx-service-tag">法人税</span>
-          <span class="tx-service-tag">消費税</span>
-          <span class="tx-service-tag">月次決算</span>
-          <span class="tx-service-tag">年次申告</span>
-          <span class="tx-service-tag">記帳代行</span>
-        </div>
+    <div class="s-services-grid">
+      <div class="s-service-card s-fade s-d1">
+        <div class="s-service-icon"><i class="fas fa-file-invoice"></i></div>
+        <h3 class="s-service-title">税務顧問・記帳代行</h3>
+        <p class="s-service-desc">freeeベースの記帳代行から月次レポート、決算・申告まで。Slackでの日常相談は無制限。freee請求書との連携で売上計上も自動化します。</p>
+        <div class="s-tags"><span class="s-tag">法人税</span><span class="s-tag">消費税</span><span class="s-tag">月次決算</span><span class="s-tag">年次申告</span><span class="s-tag">記帳代行</span></div>
       </div>
-      <div class="tx-service-card tx-fade tx-delay-2">
-        <div class="tx-service-icon"><i class="fas fa-rocket"></i></div>
-        <h3 class="tx-service-title">創業支援・会社設立</h3>
-        <p class="tx-service-desc">法人設立届出書・青色申告承認届出書などの各種届出を代理提出。創業融資（日本政策金融公庫・保証協会）の事業計画書作成も伴走します。</p>
-        <div class="tx-service-tags">
-          <span class="tx-service-tag">会社設立</span>
-          <span class="tx-service-tag">届出代行</span>
-          <span class="tx-service-tag">創業融資</span>
-          <span class="tx-service-tag">事業計画書</span>
-        </div>
+      <div class="s-service-card s-fade s-d2">
+        <div class="s-service-icon"><i class="fas fa-rocket"></i></div>
+        <h3 class="s-service-title">創業支援・会社設立</h3>
+        <p class="s-service-desc">法人設立届出書・青色申告承認届出書などの各種届出を代理提出。創業融資（日本政策金融公庫・保証協会）の事業計画書作成も伴走します。</p>
+        <div class="s-tags"><span class="s-tag">会社設立</span><span class="s-tag">届出代行</span><span class="s-tag">創業融資</span><span class="s-tag">事業計画書</span></div>
       </div>
-      <div class="tx-service-card tx-fade tx-delay-3">
-        <div class="tx-service-icon"><i class="fas fa-cloud-upload-alt"></i></div>
-        <h3 class="tx-service-title">freee導入・最適化</h3>
-        <p class="tx-service-desc">freee会計の初期設定・自動仕訳ルール構築・銀行口座やクレジットカードの連携・freee請求書の運用設計まで。紙・Excelからクラウドへの移行をフルサポートします。</p>
-        <div class="tx-service-tags">
-          <span class="tx-service-tag">freee会計</span>
-          <span class="tx-service-tag">自動仕訳</span>
-          <span class="tx-service-tag">口座連携</span>
-          <span class="tx-service-tag">freee請求書</span>
-        </div>
+      <div class="s-service-card s-fade s-d3">
+        <div class="s-service-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+        <h3 class="s-service-title">freee導入・最適化</h3>
+        <p class="s-service-desc">freee会計の初期設定・自動仕訳ルール構築・銀行口座やクレジットカードの連携・freee請求書の運用設計まで。紙・Excelからクラウドへの移行をフルサポートします。</p>
+        <div class="s-tags"><span class="s-tag">freee会計</span><span class="s-tag">自動仕訳</span><span class="s-tag">口座連携</span><span class="s-tag">freee請求書</span></div>
       </div>
-      <div class="tx-service-card tx-fade tx-delay-4">
-        <div class="tx-service-icon"><i class="fas fa-landmark"></i></div>
-        <h3 class="tx-service-title">相続・贈与税</h3>
-        <p class="tx-service-desc">事業承継を見据えた贈与税シミュレーション、相続税の申告まで。将来の税負担を見据えたプランニングをご提案します。</p>
-        <div class="tx-service-tags">
-          <span class="tx-service-tag">相続税申告</span>
-          <span class="tx-service-tag">贈与税</span>
-          <span class="tx-service-tag">事業承継</span>
-        </div>
+      <div class="s-service-card s-fade s-d4">
+        <div class="s-service-icon"><i class="fas fa-landmark"></i></div>
+        <h3 class="s-service-title">相続・贈与税</h3>
+        <p class="s-service-desc">事業承継を見据えた贈与税シミュレーション、相続税の申告まで。将来の税負担を見据えたプランニングをご提案します。</p>
+        <div class="s-tags"><span class="s-tag">相続税申告</span><span class="s-tag">贈与税</span><span class="s-tag">事業承継</span></div>
       </div>
-      <div class="tx-service-card tx-fade tx-delay-5">
-        <div class="tx-service-icon"><i class="fas fa-users-cog"></i></div>
-        <h3 class="tx-service-title">社労士連携（給与・社会保険）</h3>
-        <p class="tx-service-desc">給与計算・社会保険労務業務は提携社労士をご紹介。支払い誤りのリスク低減、本業時間の確保、将来の従業員雇用を見据えた労務体制の構築を支援します。</p>
-        <div class="tx-service-tags">
-          <span class="tx-service-tag">給与計算</span>
-          <span class="tx-service-tag">社会保険</span>
-          <span class="tx-service-tag">労務手続き</span>
-        </div>
+      <div class="s-service-card s-fade s-d5">
+        <div class="s-service-icon"><i class="fas fa-users-cog"></i></div>
+        <h3 class="s-service-title">社労士連携（給与・社会保険）</h3>
+        <p class="s-service-desc">給与計算・社会保険労務業務は提携社労士をご紹介。支払い誤りのリスク低減、本業時間の確保、将来の従業員雇用を見据えた労務体制の構築を支援します。</p>
+        <div class="s-tags"><span class="s-tag">給与計算</span><span class="s-tag">社会保険</span><span class="s-tag">労務手続き</span></div>
       </div>
-      <div class="tx-service-card tx-fade tx-delay-6">
-        <div class="tx-service-icon"><i class="fas fa-chart-bar"></i></div>
-        <h3 class="tx-service-title">資金調達・DXコンサルティング</h3>
-        <p class="tx-service-desc">はてなベース株式会社と連携し、資金調達支援（STAPA）・kintone導入・業務改善DXまで。税務の枠を超えた経営支援を提供します。</p>
-        <div class="tx-service-tags">
-          <span class="tx-service-tag">資金調達</span>
-          <span class="tx-service-tag">kintone</span>
-          <span class="tx-service-tag">業務DX</span>
-        </div>
+      <div class="s-service-card s-fade s-d6">
+        <div class="s-service-icon"><i class="fas fa-chart-bar"></i></div>
+        <h3 class="s-service-title">資金調達・DXコンサルティング</h3>
+        <p class="s-service-desc">はてなベース株式会社と連携し、資金調達支援（STAPA）・kintone導入・業務改善DXまで。税務の枠を超えた経営支援を提供します。</p>
+        <div class="s-tags"><span class="s-tag">資金調達</span><span class="s-tag">kintone</span><span class="s-tag">業務DX</span></div>
       </div>
-    </div>
-    <div class="tx-section-illust tx-fade">
-      <img src="images/pc-work.png" alt="パソコン作業"/>
     </div>
   </div>
 </section>
 
 <!-- ===== BOOKKEEPING FLOW ===== -->
-<section class="tx-bookkeeping tx-section">
-  <div class="tx-container">
-    <div class="tx-center tx-fade">
-      <div class="tx-eyebrow">Bookkeeping Flow</div>
-      <h2 class="tx-section-title">記帳代行の進め方</h2>
-      <p class="tx-section-sub">毎月の記帳はシンプルな流れで進行します。不明点はSlackで随時確認。</p>
+<section class="s-flow s-section">
+  <div class="s-container">
+    <div class="s-center s-fade">
+      <div class="s-eyebrow">Bookkeeping Flow</div>
+      <h2 class="s-title">記帳代行の進め方</h2>
+      <p class="s-subtitle">毎月の記帳はシンプルな流れで進行します。不明点はSlackで随時確認。</p>
     </div>
-    <div class="tx-flow-diagram">
-      <div class="tx-flow-row tx-fade tx-delay-1">
-        <div class="tx-flow-actor client">貴社</div>
-        <div class="tx-flow-box">
+    <div class="s-flow-diagram">
+      <div class="s-flow-row s-fade s-d1">
+        <div class="s-flow-actor client">貴社</div>
+        <div class="s-flow-box">
           <h4>売上請求書の発行 / 役員報酬・給与計算 / 毎月の資料提供</h4>
           <p>freee請求書での売上計上、経費領収書の共有をお願いします</p>
         </div>
       </div>
-      <div class="tx-flow-arrow"><i class="fas fa-arrow-down"></i></div>
-      <div class="tx-flow-row tx-fade tx-delay-2">
-        <div class="tx-flow-actor office">事務所</div>
-        <div class="tx-flow-box">
+      <div class="s-flow-arrow"><i class="fas fa-arrow-down"></i></div>
+      <div class="s-flow-row s-fade s-d2">
+        <div class="s-flow-actor office">事務所</div>
+        <div class="s-flow-box">
           <h4>freeeにて記帳</h4>
           <p>銀行明細・クレカ明細・請求書データをもとに仕訳を登録します</p>
         </div>
       </div>
-      <div class="tx-flow-arrow"><i class="fas fa-arrow-down"></i></div>
-      <div class="tx-flow-row tx-fade tx-delay-3">
-        <div class="tx-flow-actor office">事務所</div>
-        <div class="tx-flow-box">
+      <div class="s-flow-arrow"><i class="fas fa-arrow-down"></i></div>
+      <div class="s-flow-row s-fade s-d3">
+        <div class="s-flow-actor office">事務所</div>
+        <div class="s-flow-box">
           <h4>不明点・不足資料の確認</h4>
           <p>記帳中に不明な取引があればSlackで確認。追加資料をいただき再記帳します</p>
         </div>
       </div>
-      <div class="tx-flow-arrow"><i class="fas fa-arrow-down"></i></div>
-      <div class="tx-flow-row tx-fade tx-delay-4">
-        <div class="tx-flow-actor office">事務所</div>
-        <div class="tx-flow-box">
+      <div class="s-flow-arrow"><i class="fas fa-arrow-down"></i></div>
+      <div class="s-flow-row s-fade s-d4">
+        <div class="s-flow-actor office">事務所</div>
+        <div class="s-flow-box">
           <h4>月分の記帳完了報告</h4>
           <p>記帳完了後、Slackにて完了報告をお送りします。月次レポート付きプランではPL/BSサマリーもご報告します</p>
         </div>
@@ -1433,273 +653,190 @@ body {
 </section>
 
 <!-- ===== COMMUNICATION ===== -->
-<section class="tx-comm tx-section">
-  <div class="tx-container">
-    <div class="tx-center tx-fade">
-      <div class="tx-eyebrow">Communication</div>
-      <h2 class="tx-section-title">コミュニケーション方法</h2>
-      <p class="tx-section-sub">日常のやり取りはすべてSlackで完結。メール不要で、スピーディに対応します。</p>
+<section class="s-comm s-section">
+  <div class="s-container">
+    <div class="s-center s-fade">
+      <div class="s-eyebrow">Communication</div>
+      <h2 class="s-title">コミュニケーション方法</h2>
+      <p class="s-subtitle">日常のやり取りはすべてSlackで完結。メール不要で、スピーディに対応します。</p>
     </div>
-    <div class="tx-comm-grid">
-      <div class="tx-comm-card tx-fade tx-delay-1">
-        <div class="tx-comm-icon"><i class="fab fa-slack"></i></div>
-        <h3 class="tx-comm-title">Slack</h3>
-        <p class="tx-comm-desc">専用チャンネルでの日常連絡。スレッドごとにトピックを整理し、複数の相談が同時に進んでも混乱しません。</p>
+    <div class="s-comm-grid">
+      <div class="s-comm-card s-fade s-d1">
+        <div class="s-comm-icon"><i class="fab fa-slack"></i></div>
+        <h3 class="s-comm-title">Slack</h3>
+        <p class="s-comm-desc">専用チャンネルでの日常連絡。スレッドごとにトピックを整理し、複数の相談が同時に進んでも混乱しません。</p>
       </div>
-      <div class="tx-comm-card tx-fade tx-delay-2">
-        <div class="tx-comm-icon"><i class="fas fa-video"></i></div>
-        <h3 class="tx-comm-title">Web面談</h3>
-        <p class="tx-comm-desc">月次報告や税務相談はZoom / Google Meetで実施。画面共有でfreeeの画面を見ながらご説明します。</p>
+      <div class="s-comm-card s-fade s-d2">
+        <div class="s-comm-icon"><i class="fas fa-video"></i></div>
+        <h3 class="s-comm-title">Web面談</h3>
+        <p class="s-comm-desc">月次報告や税務相談はZoom / Google Meetで実施。画面共有でfreeeの画面を見ながらご説明します。</p>
       </div>
-      <div class="tx-comm-card tx-fade tx-delay-3">
-        <div class="tx-comm-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-        <h3 class="tx-comm-title">freee請求書</h3>
-        <p class="tx-comm-desc">売上請求書はfreee請求書で発行。「保存して取引を登録」を使えば売上の仕訳も自動計上されます。</p>
+      <div class="s-comm-card s-fade s-d3">
+        <div class="s-comm-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+        <h3 class="s-comm-title">freee請求書</h3>
+        <p class="s-comm-desc">売上請求書はfreee請求書で発行。「保存して取引を登録」を使えば売上の仕訳も自動計上されます。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== EXPENSES NOTE ===== -->
-<section class="tx-expenses tx-section">
-  <div class="tx-container">
-    <div class="tx-center tx-fade">
-      <div class="tx-eyebrow">Tax Notes</div>
-      <h2 class="tx-section-title">経費・役員報酬の注意点</h2>
-      <p class="tx-section-sub">創業期に押さえておきたい税務のポイントをご案内します。</p>
+<!-- ===== EXPENSES ===== -->
+<section class="s-expenses s-section">
+  <div class="s-container">
+    <div class="s-center s-fade">
+      <div class="s-eyebrow">Tax Notes</div>
+      <h2 class="s-title">経費・役員報酬の注意点</h2>
+      <p class="s-subtitle">創業期に押さえておきたい税務のポイントをご案内します。</p>
     </div>
-    <div class="tx-expenses-grid">
-      <div class="tx-expense-card tx-fade tx-delay-1">
-        <div class="tx-expense-title">経費の範囲</div>
-        <div class="tx-expense-desc">会社の事業に関連する支出のみが経費性を認められます。合理的に説明できない場合、税務署に否認され追徴課税がなされる可能性があります。</div>
+    <div class="s-expenses-grid">
+      <div class="s-expense-card s-fade s-d1">
+        <div class="s-expense-title">経費の範囲</div>
+        <div class="s-expense-desc">会社の事業に関連する支出のみが経費性を認められます。合理的に説明できない場合、税務署に否認され追徴課税がなされる可能性があります。</div>
       </div>
-      <div class="tx-expense-card tx-fade tx-delay-2">
-        <div class="tx-expense-title">役員報酬（定期同額給与）</div>
-        <div class="tx-expense-desc">税務上の経費にするためには、毎月定額かつ同じ日にちに支給する必要があります。途中変更は原則認められません。</div>
+      <div class="s-expense-card s-fade s-d2">
+        <div class="s-expense-title">役員報酬（定期同額給与）</div>
+        <div class="s-expense-desc">税務上の経費にするためには、毎月定額かつ同じ日にちに支給する必要があります。途中変更は原則認められません。</div>
       </div>
-      <div class="tx-expense-card tx-fade tx-delay-3">
-        <div class="tx-expense-title">役員賞与（事前確定届出給与）</div>
-        <div class="tx-expense-desc">役員への賞与を経費にするためには、税務署への届出が所定の期限までに必要です。設立初年度の場合はなるべく早急にご相談ください。</div>
+      <div class="s-expense-card s-fade s-d3">
+        <div class="s-expense-title">役員賞与（事前確定届出給与）</div>
+        <div class="s-expense-desc">役員への賞与を経費にするためには、税務署への届出が所定の期限までに必要です。設立初年度の場合はなるべく早急にご相談ください。</div>
       </div>
-      <div class="tx-expense-card tx-fade tx-delay-4">
-        <div class="tx-expense-title">給与の締め日・支払日</div>
-        <div class="tx-expense-desc">特にこだわりがない場合、毎月末締めの翌月25日払いを推奨しています。源泉所得税の納期の特例（従業員10人未満）も活用可能です。</div>
+      <div class="s-expense-card s-fade s-d4">
+        <div class="s-expense-title">給与の締め日・支払日</div>
+        <div class="s-expense-desc">特にこだわりがない場合、毎月末締めの翌月25日払いを推奨しています。源泉所得税の納期の特例（従業員10人未満）も活用可能です。</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ===== PRICING ===== -->
-<section class="tx-pricing tx-section">
-  <div class="tx-container">
-    <div class="tx-center tx-fade">
-      <div class="tx-eyebrow" style="color: #fff;">Pricing</div>
-      <h2 class="tx-section-title" style="color: #fff;">税務顧問料金表</h2>
-      <p class="tx-section-sub" style="color: rgba(255,255,255,0.6);">年間売上高に応じたシンプルな料金体系。記帳代行・決算申告・税務相談をすべて含みます。</p>
+<section class="s-pricing s-section">
+  <div class="s-container" style="position:relative;z-index:1">
+    <div class="s-center s-fade">
+      <div class="s-eyebrow" style="color:rgba(255,255,255,.5)">Pricing</div>
+      <h2 class="s-title" style="color:#fff">税務顧問料金表</h2>
+      <p class="s-subtitle">年間売上高に応じたシンプルな料金体系。記帳代行・決算申告・税務相談をすべて含みます。</p>
     </div>
 
-    <!-- 顧問料金テーブル -->
-    <div class="tx-fade tx-delay-1" style="margin-bottom: 48px;">
-      <h3 style="color: #fff; font-size: 18px; font-weight: 700; margin-bottom: 4px;">顧問料金表</h3>
-      <p style="color: rgba(255,255,255,0.5); font-size: 12px; margin-bottom: 16px; text-align: right;">円（税抜）</p>
-      <div style="overflow-x: auto;">
-        <table style="width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.04); border-radius: 12px; overflow: hidden;">
-          <thead>
-            <tr style="background: rgba(255,255,255,0.08);">
-              <th style="padding: 14px 16px; text-align: left; color: #fff; font-size: 13px; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.1);">年間売上高</th>
-              <th style="padding: 14px 16px; text-align: right; color: #fff; font-size: 13px; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.1);">月額顧問料</th>
-              <th style="padding: 14px 16px; text-align: right; color: #fff; font-size: 13px; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.1);">決算料</th>
-              <th style="padding: 14px 16px; text-align: right; color: #fff; font-size: 13px; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.1);">年間報酬</th>
-            </tr>
-          </thead>
+    <div class="s-fade s-d1" style="margin-bottom:48px">
+      <h3 style="color:#fff;font-size:16px;font-weight:700;margin-bottom:4px">顧問料金表</h3>
+      <p style="color:rgba(255,255,255,.4);font-size:12px;margin-bottom:16px;text-align:right">円（税抜）</p>
+      <div style="overflow-x:auto">
+        <table class="s-pricing-table">
+          <thead><tr><th>年間売上高</th><th>月額顧問料</th><th>決算料</th><th>年間報酬</th></tr></thead>
           <tbody>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px;">1,000万円未満</td>
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">20,000</td>
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.5); font-size: 14px; text-align: right;">0</td>
-              <td style="padding: 12px 16px; color: #fff; font-size: 14px; font-weight: 600; text-align: right;">240,000</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px;">1,000万〜2,000万円</td>
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">25,000</td>
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.5); font-size: 14px; text-align: right;">0</td>
-              <td style="padding: 12px 16px; color: #fff; font-size: 14px; font-weight: 600; text-align: right;">300,000</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px;">2,000万〜3,000万円</td>
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">25,000</td>
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">50,000</td>
-              <td style="padding: 12px 16px; color: #fff; font-size: 14px; font-weight: 600; text-align: right;">350,000</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px;">3,000万〜5,000万円</td>
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">30,000</td>
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">100,000</td>
-              <td style="padding: 12px 16px; color: #fff; font-size: 14px; font-weight: 600; text-align: right;">460,000</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px;">5,000万〜1億円</td>
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">40,000</td>
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">150,000</td>
-              <td style="padding: 12px 16px; color: #fff; font-size: 14px; font-weight: 600; text-align: right;">630,000</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px;">1億〜2億円</td>
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">50,000</td>
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">200,000</td>
-              <td style="padding: 12px 16px; color: #fff; font-size: 14px; font-weight: 600; text-align: right;">800,000</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px;">2億〜3億円</td>
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">70,000</td>
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">300,000</td>
-              <td style="padding: 12px 16px; color: #fff; font-size: 14px; font-weight: 600; text-align: right;">1,140,000</td>
-            </tr>
-            <tr>
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px;">3億〜5億円</td>
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">90,000〜</td>
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: right;">400,000〜</td>
-              <td style="padding: 12px 16px; color: #fff; font-size: 14px; font-weight: 600; text-align: right;">1,480,000〜</td>
-            </tr>
+            <tr><td>1,000万円未満</td><td>20,000</td><td>0</td><td>240,000</td></tr>
+            <tr><td>1,000万〜2,000万円</td><td>25,000</td><td>0</td><td>300,000</td></tr>
+            <tr><td>2,000万〜3,000万円</td><td>25,000</td><td>50,000</td><td>350,000</td></tr>
+            <tr><td>3,000万〜5,000万円</td><td>30,000</td><td>100,000</td><td>460,000</td></tr>
+            <tr><td>5,000万〜1億円</td><td>40,000</td><td>150,000</td><td>630,000</td></tr>
+            <tr><td>1億〜2億円</td><td>50,000</td><td>200,000</td><td>800,000</td></tr>
+            <tr><td>2億〜3億円</td><td>70,000</td><td>300,000</td><td>1,140,000</td></tr>
+            <tr><td>3億〜5億円</td><td>90,000〜</td><td>400,000〜</td><td>1,480,000〜</td></tr>
           </tbody>
         </table>
       </div>
     </div>
 
-    <!-- 顧問料に含まれる業務 -->
-    <div class="tx-fade tx-delay-2" style="margin-bottom: 48px;">
-      <h3 style="color: #fff; font-size: 18px; font-weight: 700; margin-bottom: 16px;">顧問料に含まれる業務範囲</h3>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
-        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 16px; text-align: center;">
-          <i class="fas fa-comments" style="color: #fff; font-size: 20px; margin-bottom: 8px; display: block;"></i>
-          <div style="color: #fff; font-size: 13px; font-weight: 600;">税務相談</div>
-        </div>
-        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 16px; text-align: center;">
-          <i class="fas fa-file-alt" style="color: #fff; font-size: 20px; margin-bottom: 8px; display: block;"></i>
-          <div style="color: #fff; font-size: 13px; font-weight: 600;">税務書類届出代行</div>
-        </div>
-        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 16px; text-align: center;">
-          <i class="fas fa-pen" style="color: #fff; font-size: 20px; margin-bottom: 8px; display: block;"></i>
-          <div style="color: #fff; font-size: 13px; font-weight: 600;">記帳代行</div>
-        </div>
-        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 16px; text-align: center;">
-          <i class="fas fa-calendar-check" style="color: #fff; font-size: 20px; margin-bottom: 8px; display: block;"></i>
-          <div style="color: #fff; font-size: 13px; font-weight: 600;">年末調整（5名分）</div>
-        </div>
-        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 16px; text-align: center;">
-          <i class="fas fa-building" style="color: #fff; font-size: 20px; margin-bottom: 8px; display: block;"></i>
-          <div style="color: #fff; font-size: 13px; font-weight: 600;">法定調書・償却資産</div>
-        </div>
-        <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 16px; text-align: center;">
-          <i class="fas fa-piggy-bank" style="color: #fff; font-size: 20px; margin-bottom: 8px; display: block;"></i>
-          <div style="color: #fff; font-size: 13px; font-weight: 600;">節税・経費削減アドバイス</div>
-        </div>
+    <div class="s-fade s-d2" style="margin-bottom:48px">
+      <h3 style="color:#fff;font-size:16px;font-weight:700;margin-bottom:16px">顧問料に含まれる業務範囲</h3>
+      <div class="s-scope-grid">
+        <div class="s-scope-item"><i class="fas fa-comments"></i><span>税務相談</span></div>
+        <div class="s-scope-item"><i class="fas fa-file-alt"></i><span>税務書類届出代行</span></div>
+        <div class="s-scope-item"><i class="fas fa-pen"></i><span>記帳代行</span></div>
+        <div class="s-scope-item"><i class="fas fa-calendar-check"></i><span>年末調整（5名分）</span></div>
+        <div class="s-scope-item"><i class="fas fa-building"></i><span>法定調書・償却資産</span></div>
+        <div class="s-scope-item"><i class="fas fa-piggy-bank"></i><span>節税・経費削減アドバイス</span></div>
       </div>
-      <p style="color: rgba(255,255,255,0.5); font-size: 12px; margin-top: 12px;">決算料には決算書の作成、法人税申告書・消費税申告書の作成・提出が含まれます。</p>
+      <p style="color:rgba(255,255,255,.4);font-size:12px">決算料には決算書の作成、法人税申告書・消費税申告書の作成・提出が含まれます。</p>
     </div>
 
-    <!-- スポット申告 -->
-    <div class="tx-fade tx-delay-3" style="margin-bottom: 48px;">
-      <h3 style="color: #fff; font-size: 18px; font-weight: 700; margin-bottom: 4px;">スポット申告料金表</h3>
-      <p style="color: rgba(255,255,255,0.5); font-size: 12px; margin-bottom: 16px;">決算申告のみのご依頼も承ります。決算書の作成、法人税・消費税の申告が含まれます。</p>
-      <div style="overflow-x: auto;">
-        <table style="width: 100%; max-width: 600px; border-collapse: collapse; background: rgba(255,255,255,0.04); border-radius: 12px; overflow: hidden;">
-          <thead>
-            <tr style="background: rgba(255,255,255,0.08);">
-              <th style="padding: 14px 16px; text-align: left; color: #fff; font-size: 13px; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.1);">年間売上高</th>
-              <th style="padding: 14px 16px; text-align: right; color: #fff; font-size: 13px; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.1);">決算料（税抜）</th>
-            </tr>
-          </thead>
+    <div class="s-fade s-d3" style="margin-bottom:48px">
+      <h3 style="color:#fff;font-size:16px;font-weight:700;margin-bottom:4px">スポット申告料金表</h3>
+      <p style="color:rgba(255,255,255,.4);font-size:12px;margin-bottom:16px">決算申告のみのご依頼も承ります。決算書の作成、法人税・消費税の申告が含まれます。</p>
+      <div style="overflow-x:auto">
+        <table class="s-pricing-table" style="max-width:600px">
+          <thead><tr><th>年間売上高</th><th>決算料（税抜）</th></tr></thead>
           <tbody>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px;">1,000万円未満</td>
-              <td style="padding: 12px 16px; color: #fff; font-size: 14px; font-weight: 600; text-align: right;">100,000</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px;">1,000万〜3,000万円</td>
-              <td style="padding: 12px 16px; color: #fff; font-size: 14px; font-weight: 600; text-align: right;">150,000</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px;">3,000万〜5,000万円</td>
-              <td style="padding: 12px 16px; color: #fff; font-size: 14px; font-weight: 600; text-align: right;">200,000</td>
-            </tr>
-            <tr>
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 14px;">5,000万円以上</td>
-              <td style="padding: 12px 16px; color: rgba(255,255,255,0.6); font-size: 14px; text-align: right;">別途お見積もり</td>
-            </tr>
+            <tr><td>1,000万円未満</td><td>100,000</td></tr>
+            <tr><td>1,000万〜3,000万円</td><td>150,000</td></tr>
+            <tr><td>3,000万〜5,000万円</td><td>200,000</td></tr>
+            <tr><td>5,000万円以上</td><td style="color:rgba(255,255,255,.5)">別途お見積もり</td></tr>
           </tbody>
         </table>
       </div>
-      <p style="color: rgba(255,255,255,0.5); font-size: 12px; margin-top: 12px;">記帳代行は別途 10,000円/100仕訳（目安）。お支払いは クレジットカード払い（顧問）/ 銀行振込（スポット）。</p>
+      <p style="color:rgba(255,255,255,.4);font-size:12px;margin-top:12px">記帳代行は別途 10,000円/100仕訳（目安）。お支払いは クレジットカード払い（顧問）/ 銀行振込（スポット）。</p>
     </div>
 
-    <div class="tx-center tx-fade" style="position: relative; z-index: 1;">
-      <a href="#contact" class="tx-btn tx-btn-gold"><i class="fas fa-paper-plane"></i> 料金について相談する</a>
+    <div class="s-center s-fade">
+      <a href="#contact" class="s-btn s-btn-primary" style="background:#fff;color:var(--navy)"><i class="fas fa-paper-plane"></i> 料金について相談する</a>
     </div>
   </div>
 </section>
 
 <!-- ===== FAQ ===== -->
-<section class="tx-faq tx-section">
-  <div class="tx-container">
-    <div class="tx-center tx-fade">
-      <div class="tx-eyebrow">FAQ</div>
-      <h2 class="tx-section-title">よくあるご質問</h2>
+<section class="s-faq s-section">
+  <div class="s-container">
+    <div class="s-center s-fade">
+      <div class="s-eyebrow">FAQ</div>
+      <h2 class="s-title">よくあるご質問</h2>
     </div>
-    <div class="tx-faq-list">
-      <div class="tx-faq-item tx-fade tx-delay-1">
-        <div class="tx-faq-q"><span class="tx-faq-q-mark">Q</span>freee以外の会計ソフトにも対応していますか</div>
-        <p class="tx-faq-a">はい。マネーフォワードや弥生会計など主要な会計ソフトに対応しています。ただし、freeeへの移行をお勧めするケースが多く、移行サポートも行っています。</p>
+    <div class="s-faq-list">
+      <div class="s-faq-item s-fade s-d1">
+        <div class="s-faq-q"><span class="s-faq-qm">Q</span>freee以外の会計ソフトにも対応していますか</div>
+        <p class="s-faq-a">はい。マネーフォワードや弥生会計など主要な会計ソフトに対応しています。ただし、freeeへの移行をお勧めするケースが多く、移行サポートも行っています。</p>
       </div>
-      <div class="tx-faq-item tx-fade tx-delay-2">
-        <div class="tx-faq-q"><span class="tx-faq-q-mark">Q</span>設立前の段階でも相談できますか</div>
-        <p class="tx-faq-a">もちろんです。法人設立届出書・青色申告承認届出書・給与支払事務所開設届出書など、設立時に必要な届出もまとめて代理提出します。</p>
+      <div class="s-faq-item s-fade s-d2">
+        <div class="s-faq-q"><span class="s-faq-qm">Q</span>設立前の段階でも相談できますか</div>
+        <p class="s-faq-a">もちろんです。法人設立届出書・青色申告承認届出書・給与支払事務所開設届出書など、設立時に必要な届出もまとめて代理提出します。</p>
       </div>
-      <div class="tx-faq-item tx-fade tx-delay-3">
-        <div class="tx-faq-q"><span class="tx-faq-q-mark">Q</span>オンラインだけで完結しますか</div>
-        <p class="tx-faq-a">はい。freee＋Slack＋Web面談で全国どこからでも対応可能です。東京・京都であれば対面での打ち合わせにも対応しています。</p>
+      <div class="s-faq-item s-fade s-d3">
+        <div class="s-faq-q"><span class="s-faq-qm">Q</span>オンラインだけで完結しますか</div>
+        <p class="s-faq-a">はい。freee＋Slack＋Web面談で全国どこからでも対応可能です。東京・京都であれば対面での打ち合わせにも対応しています。</p>
       </div>
-      <div class="tx-faq-item tx-fade tx-delay-4">
-        <div class="tx-faq-q"><span class="tx-faq-q-mark">Q</span>給与計算や社会保険の手続きもお願いできますか</div>
-        <p class="tx-faq-a">給与計算・社会保険労務業務は専門外となるため、提携社労士をご紹介しています。社労士と連携することで、支払い誤りのリスク低減・本業時間の確保・将来の雇用に向けた労務体制の整備が可能です。</p>
+      <div class="s-faq-item s-fade s-d4">
+        <div class="s-faq-q"><span class="s-faq-qm">Q</span>給与計算や社会保険の手続きもお願いできますか</div>
+        <p class="s-faq-a">給与計算・社会保険労務業務は専門外となるため、提携社労士をご紹介しています。社労士と連携することで、支払い誤りのリスク低減・本業時間の確保・将来の雇用に向けた労務体制の整備が可能です。</p>
       </div>
-      <div class="tx-faq-item tx-fade tx-delay-5">
-        <div class="tx-faq-q"><span class="tx-faq-q-mark">Q</span>freee請求書は必ず使う必要がありますか</div>
-        <p class="tx-faq-a">強制ではありませんが、freee請求書で「保存して取引を登録」機能を使うと売上仕訳が自動計上されるため、効率化の観点からご利用をお勧めしています。</p>
+      <div class="s-faq-item s-fade s-d5">
+        <div class="s-faq-q"><span class="s-faq-qm">Q</span>freee請求書は必ず使う必要がありますか</div>
+        <p class="s-faq-a">強制ではありませんが、freee請求書で「保存して取引を登録」機能を使うと売上仕訳が自動計上されるため、効率化の観点からご利用をお勧めしています。</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ===== CTA ===== -->
-<section id="contact" class="tx-cta">
-  <div class="tx-container tx-fade">
-    <div class="tx-cta-illust">
-      <img src="images/consultation.png" alt="相談"/>
-    </div>
-    <h2 class="tx-cta-title">まずは無料でご相談ください</h2>
-    <p class="tx-cta-sub">税務・会計のお悩みから資金調達まで、創業期の経営者をトータルでサポートします。お気軽にお問い合わせください。</p>
-    <div class="tx-btn-group" style="justify-content: center; position: relative; z-index: 1;">
-      <a href="https://hatenabase.jp/contact/" class="tx-btn tx-btn-gold">
-        <i class="fas fa-paper-plane"></i> 無料相談に申し込む
-      </a>
+<section id="contact" class="s-cta">
+  <div class="s-container s-fade">
+    <svg viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-width:160px;margin:0 auto 24px;display:block">
+      <circle cx="60" cy="40" r="18" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      <circle cx="100" cy="24" r="14" fill="rgba(40,100,240,0.08)" stroke="rgba(40,100,240,0.2)" stroke-width="1"/>
+      <circle cx="140" cy="40" r="18" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      <line x1="74" y1="34" x2="88" y2="28" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+      <line x1="112" y1="28" x2="126" y2="34" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+      <circle cx="60" cy="40" r="5" fill="rgba(40,100,240,0.15)"/>
+      <circle cx="100" cy="24" r="5" fill="rgba(40,100,240,0.25)"/>
+      <circle cx="140" cy="40" r="5" fill="rgba(40,100,240,0.15)"/>
+    </svg>
+    <h2>まずは無料でご相談ください</h2>
+    <p>税務・会計のお悩みから資金調達まで、創業期の経営者をトータルでサポートします。お気軽にお問い合わせください。</p>
+    <div class="s-btn-group" style="justify-content:center;position:relative;z-index:1">
+      <a href="https://hatenabase.jp/contact/" class="s-btn s-btn-primary" style="background:#fff;color:var(--navy)"><i class="fas fa-paper-plane"></i> 無料相談に申し込む</a>
     </div>
   </div>
 </section>
 
 <!-- ===== PROFILE ===== -->
-<section class="tx-profile tx-section">
-  <div class="tx-container">
-    <div class="tx-center tx-fade">
-      <div class="tx-eyebrow">Office</div>
-      <h2 class="tx-section-title">事務所概要</h2>
-      <div class="tx-section-illust" style="margin-top: 24px; margin-bottom: 32px;">
-        <img src="images/handshake.png" alt="パートナーシップ"/>
-      </div>
+<section class="s-profile s-section">
+  <div class="s-container">
+    <div class="s-center s-fade">
+      <div class="s-eyebrow">Office</div>
+      <h2 class="s-title">事務所概要</h2>
     </div>
-    <div class="tx-profile-card tx-fade tx-delay-1">
+    <div class="s-profile-card s-fade s-d1">
       <h3>田村直大税理士事務所（はてなベース税理士事務所）</h3>
-      <table class="tx-profile-table">
+      <table class="s-profile-table">
         <tr><th>運営</th><td>田村直大税理士事務所</td></tr>
         <tr><th>所在地</th><td>東京都新宿区愛住町23-1 Woody21ビル6階</td></tr>
         <tr><th>設立</th><td>2023年10月</td></tr>
@@ -1710,32 +847,25 @@ body {
         <tr><th>対応エリア</th><td>全国（オンライン）/ 東京・京都（対面可）</td></tr>
         <tr><th>主な対象</th><td>創業期〜成長期の法人・スタートアップ</td></tr>
         <tr><th>連絡手段</th><td>Slack（メイン）/ Web面談 / メール</td></tr>
-        <tr><th>HP</th><td><a href="https://hatenabase.jp/tax-accountant/" target="_blank" style="color: var(--accent); text-decoration: underline;">https://hatenabase.jp/tax-accountant/</a></td></tr>
+        <tr><th>HP</th><td><a href="https://hatenabase.jp/tax-accountant/" target="_blank" style="color:var(--accent);text-decoration:underline">https://hatenabase.jp/tax-accountant/</a></td></tr>
       </table>
     </div>
   </div>
 </section>
 
 <!-- ===== FOOTER ===== -->
-<footer style="background: var(--navy); padding: 32px 0; text-align: center;">
-  <p style="color: rgba(255,255,255,0.5); font-size: 12px; margin: 0;">&copy;2026 Hatenabase,inc.</p>
+<footer class="s-footer">
+  <p>&copy;2026 Hatenabase,inc.</p>
 </footer>
 
-<!-- ===== Fade-in Script ===== -->
+<!-- ===== Script ===== -->
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-      }
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.tx-fade').forEach(function (el) {
-    observer.observe(el);
-  });
+document.addEventListener('DOMContentLoaded',function(){
+  var observer=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('is-visible')});
+  },{threshold:0.1});
+  document.querySelectorAll('.s-fade').forEach(function(el){observer.observe(el)});
 });
 </script>
-
 </body>
 </html>
